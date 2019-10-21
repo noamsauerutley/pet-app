@@ -1,0 +1,2 @@
+class AdoptersController < ApplicationController
+end
