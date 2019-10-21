@@ -1,0 +1,318 @@
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "adopters"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "adopters"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "adopters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "zip" varchar, "image_url" varchar, "password" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "adopters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "zip" varchar, "image_url" varchar, "password" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "adoptions"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "adoptions"[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "pets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "pets"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "shelter_id" integer NOT NULL, "description" text, "image_url" varchar, "adoption_status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "shelter_id" integer NOT NULL, "description" text, "image_url" varchar, "adoption_status" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_shelter_id" ON "pets" ("shelter_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_shelter_id" ON "pets" ("shelter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "zip" varchar, "image_url" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "zip" varchar, "image_url" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_pet_id" ON "aadoptions" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_pet_id" ON "aadoptions" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_adopter_id" ON "aadoptions" ("adopter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_adopter_id" ON "aadoptions" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aadoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "adoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aadoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "adoptions"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "adoptions"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "adoptions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "adoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "aadoptions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aadoptions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aadoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_pet_id" ON "aadoptions" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_pet_id" ON "aadoptions" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_adopter_id" ON "aadoptions" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aadoptions_on_adopter_id" ON "aadoptions" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aadoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "adoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aadoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "adoptions"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "adoptions"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "adoptions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+, CONSTRAINT "fk_rails_c16ba68daf"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+, CONSTRAINT "fk_rails_c16ba68daf"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_adopter_id" ON "adoptions" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_adoptions_on_pet_id" ON "adoptions" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "adoptions" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aadoptions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_pet_id" ON "afavorites" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_pet_id" ON "afavorites" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_adopter_id" ON "afavorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_adopter_id" ON "afavorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "afavorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_pet_id" ON "afavorites" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_pet_id" ON "afavorites" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_adopter_id" ON "afavorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_afavorites_on_adopter_id" ON "afavorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "afavorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "favorites"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "favorites"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+, CONSTRAINT "fk_rails_1fb36b410b"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer NOT NULL PRIMARY KEY, "adopter_id" integer NOT NULL, "pet_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+, CONSTRAINT "fk_rails_1fb36b410b"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_adopter_id" ON "favorites" ("adopter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_pet_id" ON "favorites" ("pet_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "favorites" ("id","adopter_id","pet_id","created_at","updated_at")
+                     SELECT "id","adopter_id","pet_id","created_at","updated_at" FROM "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "afavorites"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "shelter_id" integer NOT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "adoption_status" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "shelter_id" integer NOT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "adoption_status" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_apets_on_shelter_id" ON "apets" ("shelter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_apets_on_shelter_id" ON "apets" ("shelter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "apets" ("id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at")
+                     SELECT "id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at" FROM "pets"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "apets" ("id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at")
+                     SELECT "id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at" FROM "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "pets"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "pets"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "shelter_id" integer NOT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "adoption_status" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "pets" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "shelter_id" integer NOT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "adoption_status" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_shelter_id" ON "pets" ("shelter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_pets_on_shelter_id" ON "pets" ("shelter_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at")
+                     SELECT "id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at" FROM "apets"[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pets" ("id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at")
+                     SELECT "id","name","shelter_id","description","image_url","adoption_status","created_at","updated_at" FROM "apets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apets"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apets"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191021150634)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191021150634)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191021145945),
+(20191021150130),
+(20191021150351),
+(20191021150515);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191021145945),
+(20191021150130),
+(20191021150351),
+(20191021150515);
+
+[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-21 20:42:50.929990"], ["updated_at", "2019-10-21 20:42:50.929990"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-10-21 20:42:50.929991"], ["updated_at", "2019-10-21 20:42:50.929991"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3cac8e9c9497cc2e394e3d31d6aeac4567d2c4d0"], ["created_at", "2019-10-21 20:42:50.937558"], ["updated_at", "2019-10-21 20:42:50.937558"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "3cac8e9c9497cc2e394e3d31d6aeac4567d2c4d0"], ["created_at", "2019-10-21 20:42:50.937575"], ["updated_at", "2019-10-21 20:42:50.937575"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
