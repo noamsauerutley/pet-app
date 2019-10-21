@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_10_21_150634) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "adopters", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_150634) do
   end
 
   create_table "adoptions", force: :cascade do |t|
-    t.integer "adopter_id", null: false
-    t.integer "pet_id", null: false
+    t.bigint "adopter_id", null: false
+    t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["adopter_id"], name: "index_adoptions_on_adopter_id"
@@ -32,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_150634) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "adopter_id", null: false
-    t.integer "pet_id", null: false
+    t.bigint "adopter_id", null: false
+    t.bigint "pet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["adopter_id"], name: "index_favorites_on_adopter_id"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_150634) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
-    t.integer "shelter_id", null: false
+    t.bigint "shelter_id", null: false
     t.text "description"
     t.string "image_url"
     t.boolean "adoption_status"
