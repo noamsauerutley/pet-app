@@ -4132,3 +4132,165 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
     1: <h1>hey<%="#{@adopter.name}"%>you have a new favorite!</h1><br>
   
 app/views/favorites/new.html.erb:1
+  [1m[35m (11.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5051.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "petmatch_development"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Create (12.8ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "image_url", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bebe Rippin"], ["description", "Sed quod vero corrupti."], ["zip", "34107"], ["image_url", "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg"], ["password", "bmfm000"], ["created_at", "2019-10-22 14:35:41.155833"], ["updated_at", "2019-10-22 14:35:41.155833"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Create (0.7ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "image_url", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Ms. Christian McKenzie"], ["description", "Ad quia dolores provident."], ["zip", "44971"], ["image_url", "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg"], ["password", "hiwyp88"], ["created_at", "2019-10-22 14:35:41.178836"], ["updated_at", "2019-10-22 14:35:41.178836"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Create (0.8ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "image_url", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Danial Balistreri"], ["description", "Odit dolor non repellat."], ["zip", "88501-1159"], ["image_url", "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg"], ["password", "9yo1lvb"], ["created_at", "2019-10-22 14:35:41.189215"], ["updated_at", "2019-10-22 14:35:41.189215"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Create (0.5ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "image_url", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Elida Schulist"], ["description", "Sit ut in sint."], ["zip", "70979"], ["image_url", "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg"], ["password", "jb151rb"], ["created_at", "2019-10-22 14:35:41.200454"], ["updated_at", "2019-10-22 14:35:41.200454"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Create (0.4ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "image_url", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Corinna Leffler I"], ["description", "Alias omnis quasi odio."], ["zip", "33229"], ["image_url", "https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg"], ["password", "3d0f1h7"], ["created_at", "2019-10-22 14:35:41.208928"], ["updated_at", "2019-10-22 14:35:41.208928"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (3.7ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Harvey LLC"], ["zip", "62108"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Ut molestiae repudiandae asperiores."], ["created_at", "2019-10-22 14:35:41.233999"], ["updated_at", "2019-10-22 14:35:41.233999"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Macejkovic-Ebert"], ["zip", "01288"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Qui quia autem id."], ["created_at", "2019-10-22 14:35:41.244847"], ["updated_at", "2019-10-22 14:35:41.244847"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Gulgowski-Marks"], ["zip", "74634"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Dolores consequatur quia omnis."], ["created_at", "2019-10-22 14:35:41.252582"], ["updated_at", "2019-10-22 14:35:41.252582"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hartmann, Medhurst and Larson"], ["zip", "10861-1807"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Veniam amet nihil exercitationem."], ["created_at", "2019-10-22 14:35:41.260419"], ["updated_at", "2019-10-22 14:35:41.260419"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Halvorson LLC"], ["zip", "30493-8748"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Sapiente repellat fugit nobis."], ["created_at", "2019-10-22 14:35:41.267328"], ["updated_at", "2019-10-22 14:35:41.267328"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (1.0ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPet Create (9.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "adoption_status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bert"], ["shelter_id", 3], ["description", "Voluptatem eos reprehenderit et."], ["image_url", "https://placekitten.com/200/286"], ["adoption_status", false], ["created_at", "2019-10-22 14:35:41.339333"], ["updated_at", "2019-10-22 14:35:41.339333"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "adoption_status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Edmundo"], ["shelter_id", 2], ["description", "Sint fugit sed at."], ["image_url", "https://placekitten.com/200/286"], ["adoption_status", true], ["created_at", "2019-10-22 14:35:41.374163"], ["updated_at", "2019-10-22 14:35:41.374163"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "adoption_status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Theo"], ["shelter_id", 1], ["description", "Qui explicabo molestias ut."], ["image_url", "https://placekitten.com/200/286"], ["adoption_status", false], ["created_at", "2019-10-22 14:35:41.383689"], ["updated_at", "2019-10-22 14:35:41.383689"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "adoption_status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Thea"], ["shelter_id", 9], ["description", "Quidem blanditiis consequatur iste."], ["image_url", "https://placekitten.com/200/286"], ["adoption_status", true], ["created_at", "2019-10-22 14:35:41.392930"], ["updated_at", "2019-10-22 14:35:41.392930"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "adoption_status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Janay"], ["shelter_id", 10], ["description", "Et voluptas esse minima."], ["image_url", "https://placekitten.com/200/286"], ["adoption_status", true], ["created_at", "2019-10-22 14:35:41.402727"], ["updated_at", "2019-10-22 14:35:41.402727"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFavorite Create (5.8ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 9], ["pet_id", 1], ["created_at", "2019-10-22 14:35:41.440709"], ["updated_at", "2019-10-22 14:35:41.440709"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 7], ["pet_id", 3], ["created_at", "2019-10-22 14:35:41.462757"], ["updated_at", "2019-10-22 14:35:41.462757"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 6], ["pet_id", 9], ["created_at", "2019-10-22 14:35:41.487634"], ["updated_at", "2019-10-22 14:35:41.487634"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.7ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 8], ["pet_id", 3], ["created_at", "2019-10-22 14:35:41.505151"], ["updated_at", "2019-10-22 14:35:41.505151"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mFavorite Create (0.6ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 7], ["pet_id", 10], ["created_at", "2019-10-22 14:35:41.521229"], ["updated_at", "2019-10-22 14:35:41.521229"]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mAdoption Create (5.6ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 7], ["created_at", "2019-10-22 14:35:41.589987"], ["updated_at", "2019-10-22 14:35:41.589987"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mAdoption Create (0.6ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 5], ["pet_id", 6], ["created_at", "2019-10-22 14:35:41.606903"], ["updated_at", "2019-10-22 14:35:41.606903"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAdoption Create (0.6ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 5], ["pet_id", 5], ["created_at", "2019-10-22 14:35:41.618512"], ["updated_at", "2019-10-22 14:35:41.618512"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mAdoption Create (0.6ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 3], ["pet_id", 5], ["created_at", "2019-10-22 14:35:41.629846"], ["updated_at", "2019-10-22 14:35:41.629846"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAdoption Create (0.6ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 6], ["pet_id", 8], ["created_at", "2019-10-22 14:35:41.641059"], ["updated_at", "2019-10-22 14:35:41.641059"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdoption Load (1.0ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 1], ["LIMIT", 11]]
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdoption Load (2.1ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."pet_id" = $1 LIMIT $2[0m  [["pet_id", 1], ["LIMIT", 1]]
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (4.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "adoptions" ON "adopters"."id" = "adoptions"."adopter_id" WHERE "adoptions"."pet_id" = $1 LIMIT $2[0m  [["pet_id", 1], ["LIMIT", 1]]
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1 LIMIT $2[0m  [["pet_id", 1], ["LIMIT", 11]]
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFavorite Load (1.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 1], ["LIMIT", 11]]
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAdoption Load (0.7ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 1], ["LIMIT", 11]]
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 1], ["LIMIT", 11]]
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPet Load (1.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 1], ["LIMIT", 11]]
