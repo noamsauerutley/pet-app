@@ -1,0 +1,9 @@
+<h1>hey<%="#{@adopter.name}"%>you have a new favorite!</h1><br>
+
+
+<%= form_for @favorate do |f| %>
+<%= f.label :pet_id %>
+<%= f.text_field :name %>
+
+<%= f.submit %>
+<% end%>

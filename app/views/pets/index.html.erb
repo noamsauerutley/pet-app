@@ -1,0 +1,8 @@
+<h1>Welcome to pet match!</h1><br>
+
+<h1>all of our pets</h1>
+<% @pets.each do |pet| %>
+<%= link_to pet.name, pet %>
+
+
+<% end%>
