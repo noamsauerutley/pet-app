@@ -1,5 +1,7 @@
 class Adopter < ApplicationRecord
 has_many :favorites
+has_many :favorite_pets, through: :favorites, :source => :pet
+
 has_many :adoptions
-has_many :pets, through: :favorites
+has_many :adopted_pets, through: :adoptions, :source => :pet
 end
