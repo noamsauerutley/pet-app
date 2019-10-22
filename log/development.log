@@ -4235,3 +4235,55 @@ app/views/favorites/new.html.erb:1
   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 5], ["LIMIT", 11]]
   [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" ORDER BY "adopters"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 4]]
   [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."adopter_id" = $1 LIMIT $2[0m  [["adopter_id", 5], ["LIMIT", 11]]
+Started GET "/favorites/new" for ::1 at 2019-10-22 13:59:17 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FavoritesController#new as HTML
+  Rendering favorites/new.html.erb within layouts/application
+  Rendered favorites/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1860)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 7.8ms | Allocations: 8479)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>hey<%="#{@adopter.name}"%>you have a new favorite!</h1><br>
+    2: 
+    3: 
+    4: <%= form_for @favorate do |f| %>
+  
+app/views/favorites/new.html.erb:1
+Started GET "/pets" for ::1 at 2019-10-22 13:59:22 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:4
+  Rendered pets/index.html.erb within layouts/application (Duration: 69.1ms | Allocations: 6147)
+Completed 200 OK in 2095ms (Views: 1833.9ms | ActiveRecord: 8.7ms | Allocations: 1366761)
+
+
+Started GET "/pets" for ::1 at 2019-10-22 14:01:21 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:4
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1061)
+Completed 200 OK in 132ms (Views: 128.2ms | ActiveRecord: 0.6ms | Allocations: 10555)
+
+
+Started GET "/pets" for ::1 at 2019-10-22 14:02:01 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:4
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1057)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.5ms | Allocations: 10551)
+
+
+Started GET "/pets" for ::1 at 2019-10-22 14:02:10 -0400
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:4
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1048)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.8ms | Allocations: 10527)
+
+
