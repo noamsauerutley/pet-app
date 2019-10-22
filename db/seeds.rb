@@ -8,7 +8,7 @@
 
 
 5.times do
-Adopter.create(name:Faker::Name.name,description:Faker::Lorem.sentence,zip:Faker::Address.zip(),image_url:'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg',password:Faker::Lorem.characters(number:7))
+Adopter.create(name:Faker::Name.name,description:Faker::Lorem.sentence,zip:Faker::Address.zip(),image_url:'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg',password_digest:Faker::Lorem.characters(number:7))
 end
 
 5.times do

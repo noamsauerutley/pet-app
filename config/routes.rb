@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :pets, only: [:new,:create,:index,:show]
   resources :shelters, only: [:new,:create,:show,:delete]
   resources :adopters 
+
+  get "/new"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
