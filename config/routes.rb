@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :shelters, only: [:new,:create,:show,:delete]
   resources :adopters 
 
-  root 'adopters#index'
+  # root 'adopters#index'
+
+  root "sessions#new", as: "login"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
