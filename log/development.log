@@ -25211,3 +25211,39 @@ Completed 200 OK in 47ms (Views: 26.5ms | ActiveRecord: 15.5ms | Allocations: 12
 >>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
+Started POST "/login" for ::1 at 2019-10-23 18:08:10 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"UfFd1xJGl9bWiUx781vE7t8OEZoaZ+eyucSsyIvThZWUqUNg2jw1AmJBGwCDoNz+DNw8C5hNKMCWVoEgaNwgQQ==", "session"=>{"name"=>"Vin Diesel", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."name" = $1 LIMIT $2[0m  [["name", "Vin Diesel"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 112ms (ActiveRecord: 9.9ms | Allocations: 11472)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 18:08:10 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 7064)
+Completed 200 OK in 1245ms (Views: 1228.6ms | ActiveRecord: 7.6ms | Allocations: 1370051)
+
+

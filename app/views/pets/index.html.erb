@@ -20,10 +20,6 @@
 <div class="flex-container">
 <% @pets.each do |pet| %>
     <div class="flex-item-<%=pet.id%>">
-<<<<<<< HEAD
-    <%= image_tag pet.image_url, height: 300, class: "img-responsive" %><br>
-    <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
-=======
     <%= content_tag :h2, pet.name.titleize %>
 
     <%= link_to pet_path(pet) do %>
@@ -32,9 +28,6 @@
 
     <%= link_to "See More About Me!", pet_path(pet) %>
     
->>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
     </div>
 <% end %>
 </div>
-
-
