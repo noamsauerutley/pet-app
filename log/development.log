@@ -21753,6 +21753,7 @@ the expected changes won't be reflected in that stale Module object.
 These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
+<<<<<<< HEAD
  (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
 Started GET "/pets" for ::1 at 2019-10-23 16:32:42 -0400
   [1m[35m (6.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -21766,6 +21767,153 @@ Processing by PetsController#index as HTML
 Completed 200 OK in 1436ms (Views: 1367.7ms | ActiveRecord: 20.0ms | Allocations: 1379849)
 
 
+=======
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 16:33:15 -0400
+  [1m[35m (39.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2019-10-23 16:33:28 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2019-10-23 16:34:13 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.0) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.0) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
 
 Being able to do this is deprecated. Autoloading during initialization is going
@@ -21778,6 +21926,7 @@ the expected changes won't be reflected in that stale Module object.
 These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
+<<<<<<< HEAD
  (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
 Started GET "/pets" for ::1 at 2019-10-23 16:35:51 -0400
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -22017,12 +22166,141 @@ Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.9ms | Allocations: 125
 
 
 Started GET "/pets" for ::1 at 2019-10-23 16:44:00 -0400
+=======
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3735985405932062010)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeImageUrlColumnToAvatar (20191023173736)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (67.1ms)[0m  [1m[35mALTER TABLE "adopters" RENAME COLUMN "image_url" TO "avatar"[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191023173736"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3735985405932062010)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+Started GET "/pets" for ::1 at 2019-10-23 16:34:51 -0400
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (2.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 6412)
+Completed 200 OK in 3407ms (Views: 3127.0ms | ActiveRecord: 21.0ms | Allocations: 1396082)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:35:00 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (16.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1114)
+Completed 200 OK in 54ms (Views: 30.8ms | ActiveRecord: 18.3ms | Allocations: 10484)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:35:03 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (8.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1113)
+Completed 200 OK in 39ms (Views: 24.6ms | ActiveRecord: 9.9ms | Allocations: 10440)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:35:10 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (4.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1113)
+Completed 200 OK in 37ms (Views: 28.3ms | ActiveRecord: 5.3ms | Allocations: 10436)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 16:35:11 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:55:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:33
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:49
+  Rendered adopters/show.html.erb within layouts/application (Duration: 599.9ms | Allocations: 12873)
+Completed 200 OK in 650ms (Views: 491.7ms | ActiveRecord: 153.4ms | Allocations: 23408)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:35:14 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1118)
+Completed 200 OK in 37ms (Views: 31.2ms | ActiveRecord: 1.6ms | Allocations: 10451)
+
+
+Started DELETE "/logout" for ::1 at 2019-10-23 16:35:15 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Qju+gqDrQdMwFnzwmvIdFmezDXIs8TI3vBMsiHn+aeBBn+DiHyFwZcoZbCz43sRQMjwz1GtsnAuDv/ahhJc7+w=="}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1244)
+
+
+Started GET "/login" for ::1 at 2019-10-23 16:35:15 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 219.4ms | Allocations: 177450)
+Completed 200 OK in 266ms (Views: 261.1ms | ActiveRecord: 1.0ms | Allocations: 187344)
+
+
+Started POST "/login" for ::1 at 2019-10-23 16:35:50 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3VEnKMf7SP0V9lJUT9mhU7Mfd3YMzYYImEnHx2/PMr/e9XlIeDF5S+/5Qogt9XgV5pBJ0EtQKDSn5R3ukqZgpA==", "session"=>{"name"=>"solomon peña", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mAdopter Load (3.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."name" = $1 LIMIT $2[0m  [["name", "solomon peña"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 105ms (ActiveRecord: 4.1ms | Allocations: 1958)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:35:50 -0400
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 Processing by PetsController#index as HTML
   [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
   ↳ app/controllers/application_controller.rb:15:in `set_current_user'
   Rendering pets/index.html.erb within layouts/application
   [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
   ↳ app/views/pets/index.html.erb:21
+<<<<<<< HEAD
   Rendered pets/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1993)
 Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.8ms | Allocations: 12203)
 
@@ -22203,6 +22481,593 @@ Processing by PetsController#index as HTML
   Rendering pets/index.html.erb within layouts/application
   Rendered pets/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1083)
 Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2814)
+=======
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1116)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.8ms | Allocations: 10415)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 16:35:54 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (2.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (50.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:55:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (6.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:33
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:49
+  Rendered adopters/show.html.erb within layouts/application (Duration: 23.2ms | Allocations: 2011)
+Completed 200 OK in 143ms (Views: 77.0ms | ActiveRecord: 60.5ms | Allocations: 11853)
+
+
+Started GET "/login" for ::1 at 2019-10-23 16:36:01 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 420)
+Completed 200 OK in 63ms (Views: 57.9ms | ActiveRecord: 0.5ms | Allocations: 9671)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+Started GET "/login" for ::1 at 2019-10-23 16:36:22 -0400
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 166.5ms | Allocations: 176475)
+Completed 200 OK in 1793ms (Views: 1710.9ms | ActiveRecord: 15.6ms | Allocations: 1546956)
+
+
+Started POST "/login" for ::1 at 2019-10-23 16:36:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Gphjfi6JD8mWrlAxHspXqn3+fz89SCjUf+bgR7yZK9wZPD0ekUM+f2yhQO185o7sKHFBmXrVhuhASjpuQfB5xw==", "session"=>{"name"=>"solomon peña", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."name" = $1 LIMIT $2[0m  [["name", "solomon peña"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 93ms (ActiveRecord: 1.8ms | Allocations: 1873)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:36:35 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 6319)
+Completed 200 OK in 64ms (Views: 38.0ms | ActiveRecord: 14.3ms | Allocations: 18542)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:36:44 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1113)
+Completed 200 OK in 35ms (Views: 28.4ms | ActiveRecord: 1.6ms | Allocations: 10429)
+
+
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (566.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "petmatch_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "petmatch_development"[0m
+  [1m[35m (1895.5ms)[0m  [1m[35mCREATE DATABASE "petmatch_development" ENCODING = 'utf8'[0m
+  [1m[35m (71.6ms)[0m  [1m[35mCREATE DATABASE "petmatch_development" ENCODING = 'utf8'[0m
+  [1m[35mSQL (48.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "adopters" CASCADE[0m
+  [1m[35m (179.3ms)[0m  [1m[35mCREATE TABLE "adopters" ("id" bigserial primary key, "name" character varying, "description" character varying, "zip" character varying, "avatar" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "adoptions" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" bigserial primary key, "adopter_id" bigint NOT NULL, "pet_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE  INDEX  "index_adoptions_on_adopter_id" ON "adoptions"  ("adopter_id")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_adoptions_on_pet_id" ON "adoptions"  ("pet_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "adopter_id" bigint NOT NULL, "pet_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_adopter_id" ON "favorites"  ("adopter_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_pet_id" ON "favorites"  ("pet_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "pets" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" character varying, "shelter_id" bigint NOT NULL, "description" text, "image_url" character varying, "adoption_status" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "zip" character varying, "image_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (40.4ms)[0m  [1m[35mALTER TABLE "adoptions" ADD CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "adoptions" ADD CONSTRAINT "fk_rails_c16ba68daf"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_1fb36b410b"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "pets" ADD CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191023173736)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191021145945),
+(20191021150130),
+(20191021150351),
+(20191021150515),
+(20191021150634),
+(20191022175920),
+(20191023144116);
+
+[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-23 20:37:07.002067"], ["updated_at", "2019-10-23 20:37:07.002067"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "305bd5ed4560921975bef8546c7e91cc59da90b4"], ["created_at", "2019-10-23 20:37:07.013026"], ["updated_at", "2019-10-23 20:37:07.013026"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "adopters" CASCADE[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "adopters" ("id" bigserial primary key, "name" character varying, "description" character varying, "zip" character varying, "avatar" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "adoptions" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "adoptions" ("id" bigserial primary key, "adopter_id" bigint NOT NULL, "pet_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_adoptions_on_adopter_id" ON "adoptions"  ("adopter_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_adoptions_on_pet_id" ON "adoptions"  ("pet_id")[0m
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "favorites" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" bigserial primary key, "adopter_id" bigint NOT NULL, "pet_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_adopter_id" ON "favorites"  ("adopter_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_favorites_on_pet_id" ON "favorites"  ("pet_id")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "pets" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" character varying, "shelter_id" bigint NOT NULL, "description" text, "image_url" character varying, "adoption_status" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters" CASCADE[0m
+  [1m[35m (32.4ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "zip" character varying, "image_url" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "adoptions" ADD CONSTRAINT "fk_rails_25761c92b3"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "adoptions" ADD CONSTRAINT "fk_rails_c16ba68daf"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_9654daae69"
+FOREIGN KEY ("adopter_id")
+  REFERENCES "adopters" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "favorites" ADD CONSTRAINT "fk_rails_1fb36b410b"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "pets" ADD CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-10-23 20:37:07.237894"], ["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (1.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Jast and Sons"], ["zip", "50833"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Ex et distinctio molestiae."], ["created_at", "2019-10-23 20:37:07.549503"], ["updated_at", "2019-10-23 20:37:07.549503"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Abbott Group"], ["zip", "79943"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Perspiciatis eos perferendis ipsum."], ["created_at", "2019-10-23 20:37:07.556194"], ["updated_at", "2019-10-23 20:37:07.556194"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ernser, Krajcik and Yundt"], ["zip", "09944-8948"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Nulla aut voluptates repellendus."], ["created_at", "2019-10-23 20:37:07.560971"], ["updated_at", "2019-10-23 20:37:07.560971"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Reichert, Gorczany and Kub"], ["zip", "28349-7232"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Amet assumenda dolor atque."], ["created_at", "2019-10-23 20:37:07.566024"], ["updated_at", "2019-10-23 20:37:07.566024"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Create (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "zip", "image_url", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mante Inc"], ["zip", "34481-7368"], ["image_url", "https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678"], ["description", "Sint reprehenderit omnis quis."], ["created_at", "2019-10-23 20:37:07.571146"], ["updated_at", "2019-10-23 20:37:07.571146"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (33.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Faustino"], ["shelter_id", 1], ["description", "A slightly nervous but very good kitty."], ["image_url", "https://i.redd.it/nku6ymc3irk31.jpg"], ["created_at", "2019-10-23 20:37:07.705781"], ["updated_at", "2019-10-23 20:37:07.705781"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPet Create (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Tressa"], ["shelter_id", 2], ["description", "Very picky about kibble."], ["image_url", "https://i.redd.it/mkcf1t1aqzm21.jpg"], ["created_at", "2019-10-23 20:37:07.750604"], ["updated_at", "2019-10-23 20:37:07.750604"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPet Create (0.9ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ian"], ["shelter_id", 4], ["description", "Extraordinarily loud purr."], ["image_url", "https://i.redd.it/sqr2bzhyai731.jpg"], ["created_at", "2019-10-23 20:37:07.762678"], ["updated_at", "2019-10-23 20:37:07.762678"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.9ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Kyle"], ["shelter_id", 1], ["description", "Dedicated biscuit maker."], ["image_url", "https://i.redd.it/6298aejoc7l21.jpg"], ["created_at", "2019-10-23 20:37:07.778002"], ["updated_at", "2019-10-23 20:37:07.778002"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPet Create (0.7ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Herbert"], ["shelter_id", 3], ["description", "Enemy of all mice."], ["image_url", "https://i.redd.it/tzehfum03fk21.jpg"], ["created_at", "2019-10-23 20:37:07.791377"], ["updated_at", "2019-10-23 20:37:07.791377"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Brooks"], ["shelter_id", 1], ["description", "Loves to chatter at birds."], ["image_url", "https://i.redd.it/nn6raxriilw11.jpg"], ["created_at", "2019-10-23 20:37:07.804280"], ["updated_at", "2019-10-23 20:37:07.804280"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Song"], ["shelter_id", 5], ["description", "Sleeps 20 hours a day."], ["image_url", "https://i.redd.it/oo1zhjplst131.jpg"], ["created_at", "2019-10-23 20:37:07.817785"], ["updated_at", "2019-10-23 20:37:07.817785"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Omega"], ["shelter_id", 4], ["description", "Really cute meow."], ["image_url", "https://i.redd.it/tf8au0uw72l31.jpg"], ["created_at", "2019-10-23 20:37:07.829951"], ["updated_at", "2019-10-23 20:37:07.829951"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Bruno"], ["shelter_id", 4], ["description", "Likes to climb."], ["image_url", "https://i.redd.it/xlul0lbeua021.jpg"], ["created_at", "2019-10-23 20:37:07.839874"], ["updated_at", "2019-10-23 20:37:07.839874"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Anthony"], ["shelter_id", 3], ["description", "Very friendly!"], ["image_url", "https://i.redd.it/oilf4xdn9jn21.jpg"], ["created_at", "2019-10-23 20:37:07.853547"], ["updated_at", "2019-10-23 20:37:07.853547"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPet Create (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Natividad"], ["shelter_id", 5], ["description", "Loud Talker."], ["image_url", "https://i.redd.it/hitl08d2let11.jpg"], ["created_at", "2019-10-23 20:37:07.862824"], ["updated_at", "2019-10-23 20:37:07.862824"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hong"], ["shelter_id", 1], ["description", "Loves catnip."], ["image_url", "https://i.redd.it/azwsx4uowjo21.jpg"], ["created_at", "2019-10-23 20:37:07.872171"], ["updated_at", "2019-10-23 20:37:07.872171"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPet Create (0.5ms)[0m  [1m[32mINSERT INTO "pets" ("name", "shelter_id", "description", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Noah"], ["shelter_id", 4], ["description", "Does not like the shelter, wants to be on your couch."], ["image_url", "https://i.redd.it/tqkprpmpi4v11.jpg"], ["created_at", "2019-10-23 20:37:07.881549"], ["updated_at", "2019-10-23 20:37:07.881549"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+Started GET "/pets" for ::1 at 2019-10-23 16:37:19 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Redirected to http://localhost:3000/login
+Filter chain halted as :authorized rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 32.4ms | Allocations: 6180)
+
+
+Started GET "/login" for ::1 at 2019-10-23 16:37:20 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 224.5ms | Allocations: 174354)
+Completed 200 OK in 1804ms (Views: 1798.1ms | ActiveRecord: 0.9ms | Allocations: 1534952)
+
+
+Started GET "/adopters/new" for ::1 at 2019-10-23 16:37:30 -0400
+Processing by AdoptersController#new as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering adopters/new.html.erb within layouts/application
+  Rendered adopters/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 1886)
+Completed 200 OK in 84ms (Views: 51.2ms | ActiveRecord: 9.2ms | Allocations: 16485)
+
+
+Started POST "/adopters" for ::1 at 2019-10-23 16:38:36 -0400
+Processing by AdoptersController#create as HTML
+  Parameters: {"authenticity_token"=>"+qzX7YFdk+pTZWNYZZLmli1JkmGSxZUYLphghQZ38CRw6xzVaM/r1K/n7rzLcyVkR+2A5PMfuJ3Bvid6t5WfrQ==", "adopter"=>{"name"=>"solomon", "description"=>"cat lover", "zip"=>"11224", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x00007f989f503ef0 @tempfile=#<Tempfile:/var/folders/rc/yfvt46z944s2qkk6583j8chc0000gn/T/RackMultipart20191023-20925-uebmvg.jpg>, @original_filename="cattounge.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"adopter[avatar]\"; filename=\"cattounge.jpg\"\r\nContent-Type: image/jpeg\r\n">, "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adopters_controller.rb:14:in `create'
+  [1m[36mAdopter Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "adopters" WHERE "adopters"."name" = $1 LIMIT $2[0m  [["name", "solomon"], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:14:in `create'
+  [1m[36mAdopter Create (1.4ms)[0m  [1m[32mINSERT INTO "adopters" ("name", "description", "zip", "avatar", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "solomon"], ["description", "cat lover"], ["zip", "11224"], ["avatar", "cattounge.jpg"], ["password_digest", "$2a$10$xYPs6pVdfKySkiG1Prk0x.b270ly9T2Npio1kW1MIPUTvDiTB8tlW"], ["created_at", "2019-10-23 20:38:36.399194"], ["updated_at", "2019-10-23 20:38:36.399194"]]
+  ↳ app/controllers/adopters_controller.rb:14:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adopters_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adopters_controller.rb:15:in `create'
+  [1m[36mAdopter Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "adopters" WHERE "adopters"."name" = $1 AND "adopters"."id" != $2 LIMIT $3[0m  [["name", "solomon"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:15:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adopters_controller.rb:15:in `create'
+Redirected to http://localhost:3000/adopters/1
+Completed 302 Found in 121ms (ActiveRecord: 7.1ms | Allocations: 10807)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-23 16:38:36 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:55:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:33
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:49
+  Rendered adopters/show.html.erb within layouts/application (Duration: 59.9ms | Allocations: 13094)
+Completed 200 OK in 139ms (Views: 100.2ms | ActiveRecord: 18.9ms | Allocations: 23125)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:38:46 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (15.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (5.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 6551)
+Completed 200 OK in 108ms (Views: 67.8ms | ActiveRecord: 21.3ms | Allocations: 16450)
+
+
+Started GET "/pets/5" for ::1 at 2019-10-23 16:38:57 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 5]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 67.8ms | Allocations: 9066)
+Completed 200 OK in 93ms (Views: 74.8ms | ActiveRecord: 10.2ms | Allocations: 19057)
+
+
+Started POST "/favorites" for ::1 at 2019-10-23 16:38:59 -0400
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"5ZwEglf5ytn1XZhurCz6brWROGpj9pTx3ujODqNh0OtaMf5by1sFm7S7x/CX1WPs5grahEw1SBfxfYxEGY21zg==", "favorite"=>{"adopter_id"=>"1", "pet_id"=>"5"}, "commit"=>"Favorite"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mFavorite Create (3.2ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 5], ["created_at", "2019-10-23 20:38:59.692062"], ["updated_at", "2019-10-23 20:38:59.692062"]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 26ms (ActiveRecord: 5.2ms | Allocations: 6046)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:38:59 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1906)
+Completed 200 OK in 92ms (Views: 88.2ms | ActiveRecord: 0.8ms | Allocations: 11223)
+
+
+Started GET "/pets/11" for ::1 at 2019-10-23 16:39:12 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAdopter Load (3.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 11]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1521)
+Completed 200 OK in 35ms (Views: 25.1ms | ActiveRecord: 5.3ms | Allocations: 11354)
+
+
+Started POST "/favorites" for ::1 at 2019-10-23 16:39:16 -0400
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"uzr57wOL8ItliEPNu26ZFcAhh/9WOFq6bOcydyWfmMEElwM2nyk/ySRuHFOAlwCXk7plEXn7hlxDcnA9n3P95A==", "favorite"=>{"adopter_id"=>"1", "pet_id"=>"11"}, "commit"=>"Favorite"}
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (4.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mPet Load (1.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mFavorite Create (8.8ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 11], ["created_at", "2019-10-23 20:39:16.614221"], ["updated_at", "2019-10-23 20:39:16.614221"]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 34ms (ActiveRecord: 16.5ms | Allocations: 5369)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:39:16 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (2.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1904)
+Completed 200 OK in 31ms (Views: 22.0ms | ActiveRecord: 3.8ms | Allocations: 11212)
+
+
+Started GET "/pets/13" for ::1 at 2019-10-23 16:39:30 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 13]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1524)
+Completed 200 OK in 55ms (Views: 46.2ms | ActiveRecord: 3.3ms | Allocations: 11383)
+
+
+Started POST "/favorites" for ::1 at 2019-10-23 16:39:34 -0400
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"tcR8hYjNzxsoDzWiVe+U6MFCYF0aCt43kLeR7JYJnhUKaYZcFG8AWWnpajxuFg1qktmCszXJAtG/ItOmLOX7MA==", "favorite"=>{"adopter_id"=>"1", "pet_id"=>"13"}, "commit"=>"Favorite"}
+  [1m[36mAdopter Load (4.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mPet Load (2.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[36mFavorite Create (4.8ms)[0m  [1m[32mINSERT INTO "favorites" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 13], ["created_at", "2019-10-23 20:39:34.511943"], ["updated_at", "2019-10-23 20:39:34.511943"]]
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:7:in `create'
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 32ms (ActiveRecord: 13.1ms | Allocations: 5370)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:39:34 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (5.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1904)
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 6.3ms | Allocations: 11217)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:11 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3474)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.9ms | Allocations: 13882)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:13 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (5.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2768)
+Completed 200 OK in 80ms (Views: 58.6ms | ActiveRecord: 5.9ms | Allocations: 12082)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:18 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (28.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2763)
+Completed 200 OK in 59ms (Views: 25.9ms | ActiveRecord: 29.1ms | Allocations: 12074)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:20 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (7.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2763)
+Completed 200 OK in 36ms (Views: 23.2ms | ActiveRecord: 8.6ms | Allocations: 12077)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:22 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (3.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2762)
+Completed 200 OK in 42ms (Views: 33.8ms | ActiveRecord: 4.1ms | Allocations: 12070)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:38 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 28.5ms | Allocations: 6064)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.4ms | Allocations: 8048)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:40:49 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1102)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 3077)
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 
 
   
@@ -22228,8 +23093,14 @@ ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering te
 <div class="flex-container">
 <% @pets.each do |pet| %>
     <div class="flex-item-<%=pet.id%>">
+<<<<<<< HEAD
     <%= image_tag pet.image_url, height: 300, width: 300 class: "img-responsive" %><br>
     <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+=======
+    <%= content_tag :h2, pet.name.titleize %>
+    <%= link_to image_tag pet.image_url, width: 300, class: "img-responsive" pet_path(pet)%><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
     </div>
 <% end %>
 </div>
@@ -22257,6 +23128,7 @@ ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering te
 20:    <div class="flex-container">
 21:    <% @pets.each do |pet| %>
 22:        <div class="flex-item-<%=pet.id%>">
+<<<<<<< HEAD
 23:        <%= image_tag pet.image_url, height: 300, width: 300 class: "img-responsive" %><br>
 24:        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
 25:        </div>
@@ -22522,6 +23394,1535 @@ These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
  (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
+=======
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%= link_to image_tag pet.image_url, width: 300, class: "img-responsive" pet_path(pet)%><br>
+25:        <%= link_to "See More About Me!", pet_path(pet) %>
+26:        </div>
+27:    <% end %>
+28:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:40:50 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1089)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms | Allocations: 2558)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%= link_to image_tag pet.image_url, width: 300, class: "img-responsive" pet_path(pet)%><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    </div>
+<% end %>
+</div>
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%= link_to image_tag pet.image_url, width: 300, class: "img-responsive" pet_path(pet)%><br>
+25:        <%= link_to "See More About Me!", pet_path(pet) %>
+26:        </div>
+27:    <% end %>
+28:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:42:01 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1125)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms | Allocations: 3114)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  image_tag pet.image_url, width: 300, class: "img-responsive" %><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+     <%= link_to "image_tag pet.image_url, width: 300, class: "img-responsive, pet_path(pet) %>
+    </div>
+<% end %>
+</div>
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  image_tag pet.image_url, width: 300, class: "img-responsive" %><br>
+25:        <%= link_to "See More About Me!", pet_path(pet) %>
+26:         <%= link_to "image_tag pet.image_url, width: 300, class: "img-responsive, pet_path(pet) %>
+27:        </div>
+28:    <% end %>
+29:    </div>
+  
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/pets/index.html.erb:26: syntax error, unexpected ',', expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:42:09 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2121)
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 2.4ms | Allocations: 12535)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:42:22 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2979)
+Completed 200 OK in 42ms (Views: 35.6ms | ActiveRecord: 1.3ms | Allocations: 13377)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:42:25 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (3.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (3.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2767)
+Completed 200 OK in 46ms (Views: 35.1ms | ActiveRecord: 6.9ms | Allocations: 12081)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:42:27 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2762)
+Completed 200 OK in 30ms (Views: 24.6ms | ActiveRecord: 2.2ms | Allocations: 12070)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:42:49 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1100)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 3085)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet %><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet %><br>
+25:        <%= link_to "See More About Me!", pet_path(pet) %>
+26:        
+27:        </div>
+28:    <% end %>
+29:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:43:05 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1100)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 3089)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive", pet_path%><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive", pet_path%><br>
+25:        <%= link_to "See More About Me!", pet_path(pet) %>
+26:        
+27:        </div>
+28:    <% end %>
+29:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:28: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:32: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:52:55 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1105)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 1.1ms | Allocations: 3180)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=   image_tag (pet.image_url),pet_path(pet) width: 300, class: "img-responsive"%><br>
+    # link_to image_tag("path/to/image.png"), "http://www.mysite.com/"
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=   image_tag (pet.image_url),pet_path(pet) width: 300, class: "img-responsive"%><br>
+25:        # link_to image_tag("path/to/image.png"), "http://www.mysite.com/"
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 16:53:32 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1905)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms | Allocations: 3893)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=   image_tag pet.image_url width: 300, class: "img-responsive"%><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 16:55:42 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (4.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2118)
+Completed 200 OK in 134ms (Views: 124.8ms | ActiveRecord: 5.1ms | Allocations: 12527)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 16:58:27 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2813)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.8ms | Allocations: 4793)
+
+
+  
+ActionView::Template::Error (undefined method `symbolize_keys' for "/pets/1":String):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to image_tag pet.image_url, pet_path(pet) %><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 16:58:57 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2808)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.6ms | Allocations: 4792)
+
+
+  
+ActionView::Template::Error (undefined method `symbolize_keys' for "/pets/1":String):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to image_tag (pet.image_url), pet_path(pet) %><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 16:59:58 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2808)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.1ms | Allocations: 4792)
+
+
+  
+ActionView::Template::Error (undefined method `symbolize_keys' for "/pets/1":String):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to image_tag pet.image_url, pet_path(pet) %><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 17:00:16 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (2.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2986)
+Completed 200 OK in 39ms (Views: 31.1ms | ActiveRecord: 3.5ms | Allocations: 13392)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:00:31 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1105)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 3083)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+link_to image_tag("path/to/image.png"), "http://www.mysite.com/"
+width: 300, class: "img-responsive"
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+31:    
+32:    link_to image_tag("path/to/image.png"), "http://www.mysite.com/"
+33:    width: 300, class: "img-responsive"
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:35: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:01:18 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1107)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.7ms | Allocations: 3091)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:01:51 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1089)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 2322)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to  pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to  pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:01:58 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1102)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 3084)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:03:49 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1089)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 2322)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to image_tag pet.image_url, width: 300, class: "img-responsive",pet_path(pet)%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')', expecting =>
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:05:24 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2982)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 1.4ms | Allocations: 13384)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:05:37 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2983)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 1.2ms | Allocations: 13381)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:05:50 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2982)
+Completed 200 OK in 31ms (Views: 25.8ms | ActiveRecord: 1.1ms | Allocations: 13378)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:06:12 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3138)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 1.4ms | Allocations: 13537)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:06:45 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2237)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 1.1ms | Allocations: 12641)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:06:48 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2234)
+Completed 200 OK in 85ms (Views: 79.5ms | ActiveRecord: 1.6ms | Allocations: 12631)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:06:49 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (2.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2131)
+Completed 200 OK in 52ms (Views: 30.8ms | ActiveRecord: 3.6ms | Allocations: 12114)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:07:00 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (3.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2109)
+Completed 200 OK in 33ms (Views: 22.3ms | ActiveRecord: 4.9ms | Allocations: 13035)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:07:02 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2405)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 1.4ms | Allocations: 11864)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:07:04 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (2.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 43.8ms | Allocations: 2190)
+Completed 200 OK in 66ms (Views: 59.9ms | ActiveRecord: 2.9ms | Allocations: 11506)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:07:06 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2190)
+Completed 200 OK in 39ms (Views: 33.0ms | ActiveRecord: 2.8ms | Allocations: 11501)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:07:07 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (9.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (2.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1526)
+Completed 200 OK in 46ms (Views: 27.7ms | ActiveRecord: 12.2ms | Allocations: 11363)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:07:29 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  Rendered pets/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1107)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms | Allocations: 3092)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.flex-container {
+  height: 700px;
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  /* align-items: center;  */
+  /* align-content: center; */
+}
+</style>
+</head>
+
+<h1>All the Pets!</h1>
+
+<div class="flex-container">
+<% @pets.each do |pet| %>
+    <div class="flex-item-<%=pet.id%>">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%=  link_to (image_tag pet.image_url height: 300, class: "img-responsive"),%><br>
+    
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    
+    </div>
+<% end %>
+</div>
+
+
+):
+1:    <head>
+2:    <style>
+3:    .flex-container {
+4:      height: 700px;
+5:      margin-top: 50px;
+6:      padding: 20px 0;
+7:      display: flex;
+8:      flex-direction: row;
+9:      flex-wrap: wrap;
+10:      flex-flow: row wrap;
+11:      justify-content: space-evenly;
+12:      /* align-items: center;  */
+13:      /* align-content: center; */
+14:    }
+15:    </style>
+16:    </head>
+17:    
+18:    <h1>All the Pets!</h1>
+19:    
+20:    <div class="flex-container">
+21:    <% @pets.each do |pet| %>
+22:        <div class="flex-item-<%=pet.id%>">
+23:        <%= content_tag :h2, pet.name.titleize %>
+24:        <%=  link_to (image_tag pet.image_url height: 300, class: "img-responsive"),%><br>
+25:        
+26:        <%= link_to "See More About Me!", pet_path(pet) %>
+27:        
+28:        </div>
+29:    <% end %>
+30:    </div>
+  
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:24: syntax error, unexpected ')'
+app/views/pets/index.html.erb:29: syntax error, unexpected end, expecting ')'
+app/views/pets/index.html.erb:34: syntax error, unexpected end, expecting ')'
+Started GET "/pets" for ::1 at 2019-10-23 17:07:32 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1901)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.0ms | Allocations: 3969)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to (image_tag pet.image_url height: 300, class: "img-responsive")%><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 17:07:41 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (7.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1657)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 8.1ms | Allocations: 2892)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to (image_tag pet.image_url, height: 300, class: "img-responsive")%><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 17:07:46 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1867)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms | Allocations: 3850)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to (image_tag pet.image_url height: 300, class: "img-responsive")%><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 17:07:59 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2823)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 1.2ms | Allocations: 13227)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:08:11 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2234)
+Completed 200 OK in 28ms (Views: 21.2ms | ActiveRecord: 1.8ms | Allocations: 12630)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:08:12 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (1.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2112)
+Completed 200 OK in 90ms (Views: 78.2ms | ActiveRecord: 4.3ms | Allocations: 12096)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:08:48 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1872)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.6ms | Allocations: 3855)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    21: <% @pets.each do |pet| %>
+    22:     <div class="flex-item-<%=pet.id%>">
+    23:     <%= content_tag :h2, pet.name.titleize %>
+    24:     <%=  link_to (image_tag pet.image_url(height: 300, class: "img-responsive"))%><br>
+    25:     
+    26:     <%= link_to "See More About Me!", pet_path(pet) %>
+    27:     
+  
+app/views/pets/index.html.erb:24
+app/views/pets/index.html.erb:21
+Started GET "/pets" for ::1 at 2019-10-23 17:09:03 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 2985)
+Completed 200 OK in 120ms (Views: 111.8ms | ActiveRecord: 1.6ms | Allocations: 13392)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:11:29 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (13.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 22.5ms | Allocations: 3330)
+Completed 200 OK in 154ms (Views: 136.0ms | ActiveRecord: 14.2ms | Allocations: 13727)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:11:32 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 3072)
+Completed 200 OK in 70ms (Views: 63.7ms | ActiveRecord: 2.2ms | Allocations: 12389)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:12:04 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3397)
+Completed 200 OK in 42ms (Views: 35.4ms | ActiveRecord: 2.5ms | Allocations: 13799)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:12:06 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (2.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 3136)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 3.3ms | Allocations: 12439)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:12:07 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3131)
+Completed 200 OK in 36ms (Views: 30.6ms | ActiveRecord: 1.5ms | Allocations: 12441)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:12:10 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (3.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (4.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3131)
+Completed 200 OK in 53ms (Views: 40.5ms | ActiveRecord: 7.6ms | Allocations: 12436)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:12:24 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2529)
+Completed 200 OK in 38ms (Views: 32.9ms | ActiveRecord: 1.3ms | Allocations: 12924)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:12:25 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2109)
+Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 2.0ms | Allocations: 12090)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-23 17:12:30 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1522)
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 1.7ms | Allocations: 11362)
+
+
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
 
 Being able to do this is deprecated. Autoloading during initialization is going
@@ -22534,6 +24935,7 @@ the expected changes won't be reflected in that stale Module object.
 These autoloaded constants have been unloaded.
 
 Please, check the "Autoloading and Reloading Constants" guide for solutions.
+<<<<<<< HEAD
  (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
 Started GET "/" for ::1 at 2019-10-23 18:01:39 -0400
   [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -22664,5 +25066,148 @@ Processing by SessionsController#new as HTML
   Rendering sessions/new.html.erb within layouts/application
   Rendered sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 416)
 Completed 200 OK in 29ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 9507)
+=======
+ (called from <main> at /Users/solomon/pet-app/config/environment.rb:5)
+Started GET "/pets/11" for ::1 at 2019-10-23 17:15:45 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAdopter Load (1.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 11]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 254.9ms | Allocations: 14215)
+Completed 200 OK in 2205ms (Views: 1918.7ms | ActiveRecord: 130.6ms | Allocations: 1392502)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-23 17:16:07 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (3.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:55:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:33
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:49
+  Rendered adopters/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 5872)
+Completed 200 OK in 73ms (Views: 63.3ms | ActiveRecord: 5.9ms | Allocations: 16412)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:16:17 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (5.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (15.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 2540)
+Completed 200 OK in 59ms (Views: 30.6ms | ActiveRecord: 21.0ms | Allocations: 12014)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-23 17:16:21 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (5.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (4.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1528)
+Completed 200 OK in 45ms (Views: 27.5ms | ActiveRecord: 10.4ms | Allocations: 11387)
+
+
+Started POST "/adoptions" for ::1 at 2019-10-23 17:16:27 -0400
+Processing by AdoptionsController#create as HTML
+  Parameters: {"authenticity_token"=>"vPs9+VzpJNRn3mZGwSRzrCeSKAxI0EIxHwa+7FKV85XpWwOeancyr9R9nuL4Ta+L5q+zVpx/k9ScVC5SBXdxeQ==", "adoption"=>{"adopter_id"=>"1", "pet_id"=>"2"}, "commit"=>"Adopt Me!"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mAdoption Create (74.7ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 2], ["created_at", "2019-10-23 21:16:27.646977"], ["updated_at", "2019-10-23 21:16:27.646977"]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mShelter Load (0.7ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mPet Update (0.7ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", true], ["updated_at", "2019-10-23 21:16:27.758166"], ["id", 2]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/adoptions/1
+Completed 302 Found in 231ms (ActiveRecord: 89.4ms | Allocations: 16735)
+
+
+Started GET "/adoptions/1" for ::1 at 2019-10-23 17:16:27 -0400
+Processing by AdoptionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdoption Load (0.5ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:4:in `show'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:5:in `show'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:7:in `show'
+  Rendering adoptions/show.html.erb within layouts/application
+  Rendered adoptions/show.html.erb within layouts/application (Duration: 23.0ms | Allocations: 302)
+Completed 200 OK in 87ms (Views: 78.9ms | ActiveRecord: 1.4ms | Allocations: 12088)
+
+
+Started GET "/pets" for ::1 at 2019-10-23 17:16:32 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:21
+  Rendered pets/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2278)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 2.6ms | Allocations: 11594)
+
+
+Started GET "/pets/1" for ::1 at 2019-10-23 17:16:33 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 1]]
+  ↳ app/views/pets/show.html.erb:37
+  Rendered pets/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1526)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 1.5ms | Allocations: 11363)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-23 17:17:35 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (9.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:55:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:33
+  [1m[36mPet Load (3.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:49
+  Rendered adopters/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2355)
+Completed 200 OK in 47ms (Views: 26.5ms | ActiveRecord: 15.5ms | Allocations: 12213)
+>>>>>>> 5b2044e3859093b9b58f635dbbe6bbce020d194d
 
 
