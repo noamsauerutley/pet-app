@@ -21,8 +21,15 @@
 <% @pets.each do |pet| %>
     <div class="flex-item-<%=pet.id%>">
     <%= content_tag :h2, pet.name.titleize %>
-    <%= image_tag pet.image_url, width: 300, class: "img-responsive" %><br>
+
+    <%= link_to pet_path(pet) do %>
+<%=  image_tag pet.image_url,height: 300, class: "img-responsive"%><br>
+<% end %>
+
     <%= link_to "See More About Me!", pet_path(pet) %>
+    
     </div>
 <% end %>
 </div>
+
+
