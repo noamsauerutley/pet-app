@@ -4,10 +4,10 @@
 <%= form_for :session, url: "/login", html: { class: "form" } do |f| %>
 
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
 <br><br>
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, required: true %>
 
   <% if flash[:errors] %>
     <ul>
@@ -19,3 +19,5 @@
 <br><br>
   <%= f.submit "Log In" %>
 <% end %>
+<br>or<br><br>
+<%= link_to "<button>Sign Up</button>".html_safe, new_adopter_path %>

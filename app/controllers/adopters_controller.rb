@@ -1,5 +1,6 @@
 class AdoptersController < ApplicationController
  before_action :set_adopter,only: [:edit,:show,:update,:destroy]
+ skip_before_action :authorized, only: [:new, :create]
 
  def show
     

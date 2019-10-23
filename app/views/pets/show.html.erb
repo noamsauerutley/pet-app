@@ -1,3 +1,14 @@
+<head>
+<style>
+.pet-favoriters-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  </style>
+</head>
 <h1>meet: <%= "#{@pet.name}" %></h1><br>
 
 <div class="profile_pic">
@@ -22,10 +33,10 @@
         <% end%>
         <br><br>
         <h3>Favorited by:</h3>
-<div class="pet_favoriters">
+<div class="pet-favoriters-flex-container">
 <% if @pet.favoriters.length > 0 %>
     <% @pet.favoriters.each do |favoriter| %>
-        <div class="grid-item">
+        <div class="flex-item-<%= favoriter.id %>">
         <%= image_tag favoriter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 150, class: "img-responsive" %><br>
         <%= link_to favoriter.name.titleize, adopter_path(favoriter) %>
         </div>
