@@ -1,5 +1,6 @@
 class Adopter < ApplicationRecord
 has_secure_password
+mount_uploader :avatar, AvatarUploader
 validates :name, presence: true, uniqueness: true
 
 has_many :favorites

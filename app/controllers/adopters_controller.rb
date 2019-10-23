@@ -47,7 +47,7 @@ class AdoptersController < ApplicationController
 
 
   def adopter_params
-    params.require(:adopter).permit(:name,:description,:zip,:image_ur,:password)
+    params.require(:adopter).permit(:name,:description,:zip,:avatar,:password)
   end
 
   def set_adopter

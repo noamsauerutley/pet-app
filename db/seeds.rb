@@ -8,10 +8,6 @@
 
 
 5.times do
-Adopter.create(name:Faker::Name.name,description:Faker::Lorem.sentence,zip:Faker::Address.zip(),image_url:'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1535998235000/photosp/93ec6079-d7b3-4b83-965d-d5466742a8bc/stock-photo-pink-people-black-cat-kitten-smiling-pet-smile-feline-93ec6079-d7b3-4b83-965d-d5466742a8bc.jpg',password_digest:Faker::Lorem.characters(number:7))
-end
-
-5.times do
 Shelter.create(name:Faker::Company.name,zip:Faker::Address.zip,image_url:"https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678",description:Faker::Lorem.sentence)
 end
 
@@ -30,16 +26,5 @@ Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,descri
 Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:"Loud Talker.",image_url:'https://i.redd.it/hitl08d2let11.jpg')
 Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:"Loves catnip.",image_url:'https://i.redd.it/azwsx4uowjo21.jpg')
 Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:"Does not like the shelter, wants to be on your couch.",image_url:'https://i.redd.it/tqkprpmpi4v11.jpg')
-
-
-
-
-5.times do
-Favorite.create(pet_id:Pet.all.sample.id, adopter_id:Adopter.all.sample.id)
-end
-
-5.times do
-Adoption.create(pet_id:Pet.all.sample.id, adopter_id:Adopter.all.sample.id)
-end
 
 puts "seeded succesfully!..."
