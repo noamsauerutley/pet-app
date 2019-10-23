@@ -1,13 +1,21 @@
-<h1>Create your account</h1>
+<h1>Welcome to PetMatch</h1>
+<h2>Create your account</h2>
 
 <%= form_for @adopter do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.text_field :name, required: true %>
+<br><br>
 <%= f.label :description%>
-<%= f.text_area :description %>
+<%= f.text_area :description, required: true %>
+<br><br>
 <%= f.label :zip %>
-<%= f.text_field :zip %>
+<%= f.text_field :zip, required: true %>
+<br><br>
 <%= f.label :image_url %>
-<%= f.text_field :password %>
-<%= f.submit %>
+<%= f.text_field :image_url, required: true %>
+<br><br>
+<%= f.label :password %>
+<%= f.password_field :password, required: true %>
+<br><br>
+<%= f.submit "Sign Up"%>
 <% end%>

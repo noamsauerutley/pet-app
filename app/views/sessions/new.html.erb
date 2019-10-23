@@ -1,0 +1,21 @@
+<h1>Welcome to PetMatch</h1>
+<h2>Please Log In:</h2>
+<br>
+<%= form_for :session, url: "/login", html: { class: "form" } do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <% if flash[:errors] %>
+    <ul>
+      <% flash[:errors].each do |error| %>
+        <li class="error"><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<br><br>
+  <%= f.submit "Log In" %>
+<% end %>

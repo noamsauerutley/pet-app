@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PetApp</title>
+    <title>PetMatch</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,31 @@
   </head>
 
   <body>
+  <header class="menu">
+  <div class="container">
+    <nav>
+    </nav>
+    <nav class="right">
+      <span class="item">
+        <% if @current_user == nil %>
+        <h3>I'm sorry, you must be logged in to use PetMatch</h3>
+          <%= link_to "<button>Sign Up</button>".html_safe, new_adopter_path, class: "item" %>
+            or  
+          <%= link_to "<button>Login</button>".html_safe, login_path, class: "item" %>
+        <% else %>
+          Welcome, <%= @current_user.name %>!
+          <%= link_to "My Page", adopter_path(@current_user), class: "item" %>
+          <%= link_to "See All Pets", pets_path, class: "item" %>
+          <%= link_to "Logout", "/logout", method: :delete, class: "item" %>
+        <% end %>
+      </span>
+    </nav>
+  </div>
+</header>
+<div class="main">
+  <div class="container">
     <%= yield %>
+  </div>
+</div>
   </body>
 </html>
