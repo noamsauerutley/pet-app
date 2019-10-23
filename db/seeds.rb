@@ -17,10 +17,17 @@ end
 
 # Shelter.create(name:"Happy Hollow Kitten Rescue", zip:"11201", image_url:"https://www.ci.desoto.tx.us/ImageRepository/Document?documentID=8678", description:"Wow we sure do love kittens!")
 
-5.times do
-Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://placekitten.com/200/286',adoption_status:[true, false].sample)
-end
-# Pet.create(name:"Tiger", shelter_id:1, description: "Wow what a lovely kitten", image_url:'https://placekitten.com/200/286', adoption_status:[true, false].sample)
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/nku6ymc3irk31.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/mkcf1t1aqzm21.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/sqr2bzhyai731.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/6298aejoc7l21.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/tzehfum03fk21.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/nn6raxriilw11.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/oo1zhjplst131.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/tf8au0uw72l31.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/xlul0lbeua021.jpg')
+Pet.create(name:Faker::Name.first_name(),shelter_id:Shelter.all.sample.id,description:Faker::Lorem.sentence,image_url:'https://i.redd.it/oilf4xdn9jn21.jpg')
+
 
 5.times do
 Favorite.create(pet_id:Pet.all.sample.id, adopter_id:Adopter.all.sample.id)

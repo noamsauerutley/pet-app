@@ -13,6 +13,9 @@ class AdoptionsController < ApplicationController
 
    def create
       @adoption = Adoption.create(adoption_params)
+      @pet = Pet.find(@adoption.pet_id)
+      @pet.adoption_status = true
+      @pet.save
       redirect_to @adoption
    end
    

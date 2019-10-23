@@ -12,7 +12,7 @@
 <% @pets.each do |pet| %>
     <div class="grid-item">
     <%= content_tag :h2, pet.name.titleize %>
-    <%= image_tag pet.image_url, class: "img-responsive" %><br>
+    <%= image_tag pet.image_url, width: 300, class: "img-responsive" %><br>
     <%= link_to "See More About Me!", pet_path(pet) %>
     </div>
 <% end %>
