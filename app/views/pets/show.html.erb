@@ -37,7 +37,7 @@
 <% if @pet.favoriters.length > 0 %>
     <% @pet.favoriters.each do |favoriter| %>
         <div class="flex-item-<%= favoriter.id %>">
-        <%= image_tag favoriter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 150, class: "img-responsive" %><br>
+        <%= image_tag favoriter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 150, class: "img-responsive" %><br>
         <%= link_to favoriter.name.titleize, adopter_path(favoriter) %>
         </div>
     <% end %>
