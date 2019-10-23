@@ -3,7 +3,7 @@
 </head>
 
 <div class="profile_pic">
-    <%= image_tag @current_user.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg" %><br>
+    <%= image_tag @current_user.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 400 %><br>
     <%= content_tag :h2, @current_user.name.titleize %>
    <%= link_to 'edit profile', edit_adopter_path %>
 </div>
