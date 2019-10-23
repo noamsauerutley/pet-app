@@ -1,3 +1,8 @@
-<h1>Congratulations on your new pet<%=" #{@adopter}!" %></h1>
-<h1>we hope you'll love <%= @pet %><h1>
+<h1>Congratulations on your new pet,<%=" #{@adopter.name}!" %></h1>
+
+<div class="profile_pic">
+    <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 300 %><br>
+</div>
+<h3>we hope you'll love <%= @pet.name %><h3>
+<h4><%= link_to "Back to My Page", @adopter %></h4>
 

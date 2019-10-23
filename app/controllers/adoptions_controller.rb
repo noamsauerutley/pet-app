@@ -2,9 +2,9 @@ class AdoptionsController < ApplicationController
   
    def show
        @adoption = Adoption.find(params[:id])
-       @adopter = @adoption.adopter.name
+       @adopter = @adoption.adopter
     #    @pet = Pet.find(params[:id])
-       @pet = @adoption.pet.name
+       @pet = @adoption.pet
    end
 
    def new
