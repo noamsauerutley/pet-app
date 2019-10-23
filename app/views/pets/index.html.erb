@@ -1,10 +1,22 @@
+<head>
+<title>PetMatch</title>
+<style>
+.grid-container {
+  display: grid;
+}
+</style>
+</head>
+
 <h1>Welcome to pet match!</h1><br>
 
 <h1>all of our pets</h1>
+
+<div class="grid-container">
 <% @pets.each do |pet| %>
-<%= image_tag 'https://placekitten.com/200/286' %><br>
-<%= link_to pet.name, pet %>
-
-
-
-<% end%>
+    <div class="grid-item">
+    <%= content_tag :h2, pet.name.titleize %>
+    <%= image_tag pet.image_url, class: "img-responsive" %><br>
+    <%= link_to "See More About Me!", pet_path(pet) %>
+    </div>
+<% end %>
+</div>

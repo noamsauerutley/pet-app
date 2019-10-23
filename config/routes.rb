@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :shelters, only: [:new,:create,:show,:delete]
   resources :adopters 
 
-  # root 'adopters#index'
+  root 'sessions#index'
 
-  root "sessions#new", as: "login"
+  get "/login", to: "sessions#new", as: "login"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
