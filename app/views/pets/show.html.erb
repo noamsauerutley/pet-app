@@ -1,3 +1,27 @@
 <h1>meet <%= "#{@pet.name}" %></h1><br>
+
+<div class="profile_pic">
+    <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg" %><br>
+    <%= content_tag :h2, @pet.name.titleize %>
+</div>
+<br>
+<% if @pet.adoption_status == false %>
+    <%= form_for Adoption.new do |f| %>
+    <%= f.hidden_field :adopter_id, value: @current_user.id %>
+    <%= f.hidden_field :pet_id, value: @pet.id %>
+    <%= f.submit "Adopt Me!"%>
+    <% end%>
+    <br>
+    <%= form_for Favorite.new do |f| %>
+        <%= f.hidden_field :adopter_id,:value => @current_user.id %>
+        <%= f.hidden_field :pet_id, :value=> @pet.id %>
+        <%= f.submit "Favorite"%>
+        <% end%>
+<% else %>
+<h3>💕 TAKEN 💕 </h3>
+<% end %>
+<br><br>
 <h1>description:</h1><br>
 <%= @pet.description %>
+<br><br><br>
+

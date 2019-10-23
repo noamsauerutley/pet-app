@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to pets_path
       else
         flash[:errors] = ["You must be logged in to match with pets."]
-        redirect_to pets_path
+        redirect_to "sessions#index"
       end
     end
   
