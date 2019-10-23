@@ -10249,3 +10249,749 @@ Processing by PetsController#index as HTML
 Completed 200 OK in 30ms (Views: 24.1ms | ActiveRecord: 3.5ms | Allocations: 10540)
 
 
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:42:17 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 173.1ms | Allocations: 178407)
+Completed 200 OK in 1958ms (Views: 1905.9ms | ActiveRecord: 11.2ms | Allocations: 1547607)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 09:46:06 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  Rendered adopters/show.html.erb within layouts/application (Duration: 498.7ms | Allocations: 154593)
+Completed 500 Internal Server Error in 509ms (ActiveRecord: 1.6ms | Allocations: 157136)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `efsf' for #<#<Class:0x00007fd0b1777a70>:0x00007fd0b1775e50>):
+     5: <div class="profile_pic">
+     6:     <%= image_tag @current_user.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg" %><br>
+     7:     <%= content_tag :h2, @current_user.name.titleize %>
+     8:     <%= efsf %>
+     9: </div>
+    10: <br><br><br>
+    11: <h3>My Favorite Pets</h3>
+  
+app/views/adopters/show.html.erb:8
+Started GET "/adopters/6" for ::1 at 2019-10-23 09:46:25 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (4.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (8.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 57.1ms | Allocations: 9281)
+Completed 200 OK in 90ms (Views: 47.4ms | ActiveRecord: 38.3ms | Allocations: 20090)
+
+
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /Users/solomon/.rvm/gems/ruby-2.6.1/bin/rake:23)
+Started GET "/adopters/6" for ::1 at 2019-10-23 09:49:28 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (2.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 106.4ms | Allocations: 9411)
+Completed 200 OK in 1765ms (Views: 1682.7ms | ActiveRecord: 41.9ms | Allocations: 1378478)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:49:32 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 192.0ms | Allocations: 178267)
+Completed 200 OK in 227ms (Views: 217.9ms | ActiveRecord: 1.6ms | Allocations: 188120)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 09:49:39 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (14.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1029)
+Completed 200 OK in 63ms (Views: 35.3ms | ActiveRecord: 16.7ms | Allocations: 10737)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:49:58 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (42.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (13.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1121)
+Completed 200 OK in 125ms (Views: 60.5ms | ActiveRecord: 56.2ms | Allocations: 10831)
+
+
+Started PATCH "/adopters/6" for ::1 at 2019-10-23 09:50:27 -0400
+Processing by AdoptersController#update as HTML
+  Parameters: {"authenticity_token"=>"PrDS58HVjBdX250APyZY2Ct9N1u6NgklyN1yvEyuhQGMbF+3rXOjb1KdrLRL7LoUtU4fXkAs2cu2A0AJu98ASA==", "adopter"=>{"name"=>"solomon peña", "description"=>"i love cats!and dogs", "zip"=>"11224", "password"=>"[FILTERED]"}, "commit"=>"Update Adopter", "id"=>"6"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adopters_controller.rb:30:in `update'
+  [1m[36mAdopter Exists? (16.9ms)[0m  [1m[34mSELECT 1 AS one FROM "adopters" WHERE "adopters"."name" = $1 AND "adopters"."id" != $2 LIMIT $3[0m  [["name", "solomon peña"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:30:in `update'
+  [1m[36mAdopter Update (1.4ms)[0m  [1m[33mUPDATE "adopters" SET "name" = $1, "description" = $2, "updated_at" = $3 WHERE "adopters"."id" = $4[0m  [["name", "solomon peña"], ["description", "i love cats!and dogs"], ["updated_at", "2019-10-23 13:50:27.825502"], ["id", 6]]
+  ↳ app/controllers/adopters_controller.rb:30:in `update'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adopters_controller.rb:30:in `update'
+Redirected to http://localhost:3000/adopters/6
+Completed 302 Found in 38ms (ActiveRecord: 19.9ms | Allocations: 5743)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 09:50:27 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (58.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 80.0ms | Allocations: 1060)
+Completed 200 OK in 176ms (Views: 111.1ms | ActiveRecord: 60.1ms | Allocations: 10757)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:51:19 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1271)
+Completed 200 OK in 66ms (Views: 61.1ms | ActiveRecord: 0.7ms | Allocations: 12104)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:51:30 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1258)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 1.0ms | Allocations: 12099)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:52:01 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (2.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1256)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 3.7ms | Allocations: 12082)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:52:10 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1257)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 1.6ms | Allocations: 12082)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:52:11 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 999)
+Completed 200 OK in 49ms (Views: 41.6ms | ActiveRecord: 2.4ms | Allocations: 10691)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:52:53 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1257)
+Completed 200 OK in 34ms (Views: 27.3ms | ActiveRecord: 1.5ms | Allocations: 12075)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:54:04 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (6.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (2.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 28.4ms | Allocations: 5927)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 9.1ms | Allocations: 8453)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:54:15 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (2.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1259)
+Completed 200 OK in 42ms (Views: 32.4ms | ActiveRecord: 2.8ms | Allocations: 12082)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:56:15 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1264)
+Completed 200 OK in 36ms (Views: 29.9ms | ActiveRecord: 0.8ms | Allocations: 12081)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:56:34 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1264)
+Completed 200 OK in 35ms (Views: 27.9ms | ActiveRecord: 1.2ms | Allocations: 12089)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:56:36 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 999)
+Completed 200 OK in 31ms (Views: 24.9ms | ActiveRecord: 0.8ms | Allocations: 10697)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:56:46 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 997)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.8ms | Allocations: 10691)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:57:08 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1261)
+Completed 200 OK in 33ms (Views: 26.5ms | ActiveRecord: 1.3ms | Allocations: 12080)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:57:23 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1259)
+Completed 200 OK in 29ms (Views: 21.9ms | ActiveRecord: 1.9ms | Allocations: 12087)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:57:39 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1258)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 2.4ms | Allocations: 12080)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:57:49 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (3.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1144)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 4.1ms | Allocations: 3661)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>edit your profile</h1>
+
+<%= form_for @adopter do |f| %>
+<%= f.label :name: %><br>
+<%= f.text_field :name %><br>
+
+<div class = "description">
+<%= f.label :description%><br>
+<%= f.text_area :description %><br>
+</div>
+
+
+<%= f.label :zip %>
+<%= f.text_field :zip %>
+<%= f.label :image_url %>
+<%= f.text_field :password %>
+<%= f.submit "submit profile" %>
+<% end%>
+):
+1:    <h1>edit your profile</h1>
+2:    
+3:    <%= form_for @adopter do |f| %>
+4:    <%= f.label :name: %><br>
+5:    <%= f.text_field :name %><br>
+6:    
+7:    <div class = "description">
+8:    <%= f.label :description%><br>
+9:    <%= f.text_area :description %><br>
+10:    </div>
+11:    
+12:    
+13:    <%= f.label :zip %>
+14:    <%= f.text_field :zip %>
+15:    <%= f.label :image_url %>
+16:    <%= f.text_field :password %>
+17:    <%= f.submit "submit profile" %>
+18:    <% end%>
+  
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/adopters/edit.html.erb:18: syntax error, unexpected end, expecting ')'
+app/views/adopters/edit.html.erb:20: syntax error, unexpected end, expecting ')'
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:58:00 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1149)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.0ms | Allocations: 3714)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>edit your profile</h1>
+
+<%= form_for @adopter do |f| %>
+<%= f.label :name "name:" %><br>
+<%= f.text_field :name %><br>
+
+<div class = "description">
+<%= f.label :description%><br>
+<%= f.text_area :description %><br>
+</div>
+
+
+<%= f.label :zip %>
+<%= f.text_field :zip %>
+<%= f.label :image_url %>
+<%= f.text_field :password %>
+<%= f.submit "submit profile" %>
+<% end%>
+):
+1:    <h1>edit your profile</h1>
+2:    
+3:    <%= form_for @adopter do |f| %>
+4:    <%= f.label :name "name:" %><br>
+5:    <%= f.text_field :name %><br>
+6:    
+7:    <div class = "description">
+8:    <%= f.label :description%><br>
+9:    <%= f.text_area :description %><br>
+10:    </div>
+11:    
+12:    
+13:    <%= f.label :zip %>
+14:    <%= f.text_field :zip %>
+15:    <%= f.label :image_url %>
+16:    <%= f.text_field :password %>
+17:    <%= f.submit "submit profile" %>
+18:    <% end%>
+  
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/adopters/edit.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:58:05 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1278)
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 0.9ms | Allocations: 12539)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:58:22 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (3.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 448.1ms | Allocations: 153124)
+Completed 500 Internal Server Error in 462ms (ActiveRecord: 4.9ms | Allocations: 155649)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fd97bd4b460>:0x00007fd97bd49b10>):
+    18: <% end%>
+    19: 
+    20: 
+    21: <%= f.label :description%><br>
+    22: <%= f.text_area :description %><br>
+  
+app/views/adopters/edit.html.erb:21
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:59:08 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1164)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 1.6ms | Allocations: 11993)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 09:59:32 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1050)
+Completed 200 OK in 30ms (Views: 23.8ms | ActiveRecord: 0.9ms | Allocations: 11872)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:01:10 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 824)
+Completed 200 OK in 47ms (Views: 36.7ms | ActiveRecord: 2.3ms | Allocations: 11645)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 10:02:38 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (7.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (5.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1393)
+Completed 200 OK in 55ms (Views: 32.7ms | ActiveRecord: 13.5ms | Allocations: 11222)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:02:54 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 545)
+Completed 200 OK in 39ms (Views: 28.7ms | ActiveRecord: 2.5ms | Allocations: 10240)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:02:58 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 543)
+Completed 200 OK in 29ms (Views: 23.1ms | ActiveRecord: 0.9ms | Allocations: 10241)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:03:56 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (4.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 821)
+Completed 200 OK in 37ms (Views: 27.8ms | ActiveRecord: 4.6ms | Allocations: 11639)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:04:27 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 822)
+Completed 200 OK in 33ms (Views: 26.2ms | ActiveRecord: 1.0ms | Allocations: 11650)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:04:48 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 545)
+Completed 200 OK in 33ms (Views: 25.1ms | ActiveRecord: 1.2ms | Allocations: 10234)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:04:49 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 824)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 0.9ms | Allocations: 11646)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:04:55 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 824)
+Completed 200 OK in 32ms (Views: 24.5ms | ActiveRecord: 0.9ms | Allocations: 11640)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:05:00 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 825)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.6ms | Allocations: 11653)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:05:11 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 823)
+Completed 200 OK in 42ms (Views: 32.5ms | ActiveRecord: 2.3ms | Allocations: 13030)
+
+
+Started GET "/adopters/6" for ::1 at 2019-10-23 10:05:35 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (2.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 6]]
+  ↳ app/views/adopters/show.html.erb:13
+  Rendered adopters/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1371)
+Completed 200 OK in 33ms (Views: 25.2ms | ActiveRecord: 3.3ms | Allocations: 12194)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:05:37 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 827)
+Completed 200 OK in 47ms (Views: 37.9ms | ActiveRecord: 1.3ms | Allocations: 10666)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:21:48 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 543)
+Completed 200 OK in 28ms (Views: 18.5ms | ActiveRecord: 2.6ms | Allocations: 10325)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:22:37 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 61.4ms | Allocations: 3415)
+Completed 200 OK in 89ms (Views: 82.1ms | ActiveRecord: 1.3ms | Allocations: 14149)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:23:19 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 934)
+Completed 200 OK in 32ms (Views: 24.0ms | ActiveRecord: 1.7ms | Allocations: 11752)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:23:29 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (3.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 932)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 4.0ms | Allocations: 11754)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:25:24 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 2.8ms | Allocations: 931)
+Completed 200 OK in 34ms (Views: 25.4ms | ActiveRecord: 1.8ms | Allocations: 11750)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 10:25:47 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 931)
+Completed 200 OK in 36ms (Views: 27.1ms | ActiveRecord: 1.7ms | Allocations: 11749)
+
+
+Started GET "/adopters/6/edit" for ::1 at 2019-10-23 11:00:07 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `set_current_user'
+  [1m[36mAdopter Load (0.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:54:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1683)
+Completed 200 OK in 1600ms (Views: 1541.8ms | ActiveRecord: 12.1ms | Allocations: 1370843)
+
+
