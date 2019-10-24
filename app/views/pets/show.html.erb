@@ -32,8 +32,6 @@
         <%= f.hidden_field :pet_id, :value=> @pet.id %>
         <%= f.submit "Favorite"%>
         <% end %>
-        <% else %>
-        <%= button_to "Remove From Favorites",method: :delete %>
     <% end %>
 
     <h3>Favorited by:</h3>

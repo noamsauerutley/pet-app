@@ -29012,3 +29012,865 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/pets/2?method=delete" for ::1 at 2019-10-24 11:18:00 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/pets/2"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:21:50 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 50.2ms | Allocations: 12780)
+Completed 200 OK in 193ms (Views: 106.1ms | ActiveRecord: 37.7ms | Allocations: 38727)
+
+
+Started GET "/adopters/2" for ::1 at 2019-10-24 11:21:53 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 2]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 2]]
+  ↳ app/views/adopters/show.html.erb:58
+  Rendered adopters/show.html.erb within layouts/application (Duration: 19.0ms | Allocations: 6223)
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 2.1ms | Allocations: 16944)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:21:55 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 4004)
+Completed 200 OK in 39ms (Views: 28.9ms | ActiveRecord: 5.0ms | Allocations: 13605)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:27:37 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 32.8ms | Allocations: 12130)
+Completed 200 OK in 108ms (Views: 50.5ms | ActiveRecord: 18.5ms | Allocations: 37843)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:27:53 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4535)
+Completed 200 OK in 27ms (Views: 21.2ms | ActiveRecord: 1.7ms | Allocations: 15306)
+
+
+Started DELETE "/remove-favorite" for ::1 at 2019-10-24 11:27:56 -0400
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WnzsY8MyBNcb9/H6olALMVScuoba4JOsKDE+mD0QqESfJPLUC0imA68/poHSqxMhh06XF1jKXN4HoxNw3h8NkA=="}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Completed 404 Not Found in 5ms (ActiveRecord: 3.0ms | Allocations: 1234)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Favorite without an ID):
+  
+app/controllers/favorites_controller.rb:12:in `destroy'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:31:36 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 27.9ms | Allocations: 11448)
+Completed 200 OK in 128ms (Views: 63.4ms | ActiveRecord: 20.5ms | Allocations: 36197)
+
+
+Started DELETE "/remove-favorite" for ::1 at 2019-10-24 11:31:38 -0400
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sUkQJ7sU9dCzvq3tGlAlGx1vXL9GI0MH663uU4oNEKh0EQ6Qc25XBAd2+pZqqz0Lzr1xLsQJjHXEP8O7aQK1fA=="}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.3ms | Allocations: 110386)
+
+
+  
+NameError (undefined local variable or method `adopter_id' for #<FavoritesController:0x00007f8a37140f28>
+Did you mean?  adopter_url):
+  
+app/controllers/favorites_controller.rb:12:in `destroy'
+Started DELETE "/remove-favorite" for ::1 at 2019-10-24 11:32:20 -0400
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sUkQJ7sU9dCzvq3tGlAlGx1vXL9GI0MH663uU4oNEKh0EQ6Qc25XBAd2+pZqqz0Lzr1xLsQJjHXEP8O7aQK1fA=="}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 8.3ms | Allocations: 10519)
+
+
+  
+ArgumentError (Unsupported argument type: adopter_id (Symbol)):
+  
+app/controllers/favorites_controller.rb:12:in `destroy'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:33:54 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 20.6ms | Allocations: 11243)
+Completed 200 OK in 79ms (Views: 28.8ms | ActiveRecord: 12.0ms | Allocations: 28622)
+
+
+Started DELETE "/remove-favorite" for ::1 at 2019-10-24 11:33:56 -0400
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Tl8r+1xF7PgMjZYk0Zi7OFUbZtOtmzSpWEj2uC05dt2LBzVMlD9OLLhFwV+hY6MohslLQi+x+9t32ttQzjbTCQ=="}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1205)
+
+
+  
+ArgumentError (Unsupported argument type: adopter_id (Symbol)):
+  
+app/controllers/favorites_controller.rb:12:in `destroy'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:36:31 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  Rendered pets/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1525)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 13.7ms | Allocations: 18852)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<style>
+.pet-favoriters-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  </style>
+</head>
+<h1>meet: <%= "#{@pet.name}" %></h1><br>
+
+<div class="profile_pic">
+    <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %><br>
+    <%= content_tag :h2, @pet.name.titleize %>
+</div>
+<br>
+<h1>description:</h1><br>
+<%= @pet.description %>
+<br><br>
+<% if @pet.adoption_status == false %>
+    <%= form_for Adoption.new do |f| %>
+    <%= f.hidden_field :adopter_id, value: @current_user.id %>
+    <%= f.hidden_field :pet_id, value: @pet.id %>
+    <%= f.submit "Adopt Me!"%>
+    <% end%>
+    <br>
+      <% if !@current_user.favorite_pets.include?(@pet)  %>
+    <%= form_for Favorite.new do |f| %>
+        <%= f.hidden_field :adopter_id,:value => @current_user.id %>
+        <%= f.hidden_field :pet_id, :value=> @pet.id %>
+        <%= f.submit "Favorite"%>
+        <% end %>
+        <% else %>
+        <%= link_to "<button>Remove Favorite</button>".html_safe, "/remove-favorite"(@favorite), method: :delete%>
+    <% end %>
+
+    <h3>Favorited by:</h3>
+<div class="pet-favoriters-flex-container">
+<% if @pet.favoriters.length > 0 %>
+    <% @pet.favoriters.each do |favoriter| %>
+        <div class="flex-item-<%= favoriter.id %>">
+        <%= link_to adopter_path(favoriter) do %>
+            <%= image_tag favoriter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 150, class: "img-responsive" %>
+        <% end %>
+        <h2><%= link_to favoriter.name.titleize, adopter_path(favoriter) %></h2>
+        <br>
+        </div>
+    <% end %>
+<% else %>
+<p>No one has favorited <%=@pet.name %> yet! 🙁 </p>
+<%= link_to "See All Pets", pets_path %>
+<% end %>
+</div>
+<% else %>
+<h3>💕 TAKEN 💕 </h3>
+<h4> Adopted by <%=Adopter.find_by(id: @pet.adopter.id).name %></h4>
+<% end %>
+<br><br>
+
+
+
+):
+1:    <head>
+2:    <style>
+3:    .pet-favoriters-flex-container {
+4:        display: flex;
+5:        flex-direction: row;
+6:        flex-wrap: wrap;
+7:        flex-flow: row wrap;
+8:        justify-content: space-evenly;
+9:      }
+10:      </style>
+11:    </head>
+12:    <h1>meet: <%= "#{@pet.name}" %></h1><br>
+13:    
+14:    <div class="profile_pic">
+15:        <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %><br>
+16:        <%= content_tag :h2, @pet.name.titleize %>
+17:    </div>
+18:    <br>
+19:    <h1>description:</h1><br>
+20:    <%= @pet.description %>
+21:    <br><br>
+22:    <% if @pet.adoption_status == false %>
+23:        <%= form_for Adoption.new do |f| %>
+24:        <%= f.hidden_field :adopter_id, value: @current_user.id %>
+25:        <%= f.hidden_field :pet_id, value: @pet.id %>
+26:        <%= f.submit "Adopt Me!"%>
+27:        <% end%>
+28:        <br>
+29:          <% if !@current_user.favorite_pets.include?(@pet)  %>
+30:        <%= form_for Favorite.new do |f| %>
+31:            <%= f.hidden_field :adopter_id,:value => @current_user.id %>
+32:            <%= f.hidden_field :pet_id, :value=> @pet.id %>
+33:            <%= f.submit "Favorite"%>
+34:            <% end %>
+35:            <% else %>
+36:            <%= link_to "<button>Remove Favorite</button>".html_safe, "/remove-favorite"(@favorite), method: :delete%>
+37:        <% end %>
+38:    
+39:        <h3>Favorited by:</h3>
+40:    <div class="pet-favoriters-flex-container">
+41:    <% if @pet.favoriters.length > 0 %>
+42:        <% @pet.favoriters.each do |favoriter| %>
+43:            <div class="flex-item-<%= favoriter.id %>">
+44:            <%= link_to adopter_path(favoriter) do %>
+45:                <%= image_tag favoriter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 150, class: "img-responsive" %>
+46:            <% end %>
+47:            <h2><%= link_to favoriter.name.titleize, adopter_path(favoriter) %></h2>
+48:            <br>
+49:            </div>
+50:        <% end %>
+51:    <% else %>
+52:    <p>No one has favorited <%=@pet.name %> yet! 🙁 </p>
+53:    <%= link_to "See All Pets", pets_path %>
+54:    <% end %>
+55:    </div>
+56:    <% else %>
+57:    <h3>💕 TAKEN 💕 </h3>
+58:    <h4> Adopted by <%=Adopter.find_by(id: @pet.adopter.id).name %></h4>
+59:    <% end %>
+60:    <br><br>
+  
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+app/views/pets/show.html.erb:36: syntax error, unexpected '(', expecting ')'
+app/views/pets/show.html.erb:36: syntax error, unexpected tLABEL
+Started GET "/pets/2" for ::1 at 2019-10-24 11:38:02 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 12694)
+Completed 200 OK in 92ms (Views: 26.9ms | ActiveRecord: 18.9ms | Allocations: 38491)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:38:06 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3910)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 1.4ms | Allocations: 13503)
+
+
+Started DELETE "/pets/2" for ::1 at 2019-10-24 11:38:11 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/pets/2"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:39:13 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 191.7ms | Allocations: 87530)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 1.2ms | Allocations: 89781)
+
+
+  
+ActionView::Template::Error (undefined method `delete_favorite_path' for #<#<Class:0x00007f8a35c05050>:0x00007f8a35c0f6b8>):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, delete_favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:42:43 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 393.7ms | Allocations: 173779)
+Completed 500 Internal Server Error in 451ms (ActiveRecord: 24.0ms | Allocations: 191108)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `favorite' for #<#<Class:0x00007f8a3713a8d0>:0x00007f8a37138800>
+Did you mean?  favorites_url):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to 'Remove Favorite', pet_favorite_path(@pet, favorite),
+    37:             data: {:confirm => 'Are you sure?'}, :method => :delete %>
+    38:     <% end %>
+    39: 
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:42:59 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 207.0ms | Allocations: 87543)
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 1.7ms | Allocations: 89802)
+
+
+  
+ActionView::Template::Error (undefined method `pet_favorite_path' for #<#<Class:0x00007f8a353c1d58>:0x00007f8a31333278>
+Did you mean?  new_favorite_path):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to 'Remove Favorite', pet_favorite_path(@pet, @favorite),
+    37:             data: {:confirm => 'Are you sure?'}, :method => :delete %>
+    38:     <% end %>
+    39: 
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:43:43 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 219.5ms | Allocations: 93816)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 20.0ms | Allocations: 111164)
+
+
+  
+ActionView::Template::Error (undefined method `delete_favorite_path' for #<#<Class:0x00007f8a3701bd78>:0x00007f8a3701a068>):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, delete_favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:45:06 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 197.8ms | Allocations: 87588)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 1.7ms | Allocations: 89844)
+
+
+  
+ActionView::Template::Error (undefined method `favorite_path' for #<#<Class:0x00007f8a327b66c8>:0x00007f8a327b48f0>
+Did you mean?  favorites_path):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:45:14 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 5875)
+Completed 200 OK in 63ms (Views: 56.5ms | ActiveRecord: 1.9ms | Allocations: 16566)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:45:18 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 3875)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 1.7ms | Allocations: 13474)
+
+
+Started DELETE "/favorites" for ::1 at 2019-10-24 11:45:21 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/favorites"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:46:11 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 31.3ms | Allocations: 12172)
+Completed 200 OK in 111ms (Views: 48.0ms | ActiveRecord: 20.3ms | Allocations: 37937)
+
+
+Started DELETE "/favorites" for ::1 at 2019-10-24 11:46:13 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/favorites"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets/2" for ::1 at 2019-10-24 11:46:18 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:41
+  Rendered pets/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3876)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 1.7ms | Allocations: 13476)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-24 11:46:29 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 203.4ms | Allocations: 87597)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 2.6ms | Allocations: 89847)
+
+
+  
+ActionView::Template::Error (undefined method `favorite_path' for #<#<Class:0x00007f8a35e96f80>:0x00007f8a35e95068>
+Did you mean?  favorites_path):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:46:51 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 24.3ms | Allocations: 8685)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 21.5ms | Allocations: 25418)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>nil}, missing required keys: [:id]):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:47:01 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2383)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms | Allocations: 3886)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>nil}, missing required keys: [:id]):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:47:23 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  Rendered pets/show.html.erb within layouts/application (Duration: 39.9ms | Allocations: 8722)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 18.0ms | Allocations: 25454)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"favorites", :id=>nil}, missing required keys: [:id]):
+    33:         <%= f.submit "Favorite"%>
+    34:         <% end %>
+    35:         <% else %>
+    36:         <%= link_to "<button>Remove Favorite</button>".html_safe, favorite_path(@favorite), method: :delete%>
+    37:     <% end %>
+    38: 
+    39:     <h3>Favorited by:</h3>
+  
+app/views/pets/show.html.erb:36
+Started GET "/pets/2" for ::1 at 2019-10-24 11:51:42 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 28.5ms | Allocations: 12081)
+Completed 200 OK in 109ms (Views: 46.6ms | ActiveRecord: 19.1ms | Allocations: 37845)
+
+
+Started POST "/adoptions" for ::1 at 2019-10-24 11:51:52 -0400
+Processing by AdoptionsController#create as HTML
+  Parameters: {"authenticity_token"=>"i5Rfcyoa8OwcPKw3u/xfIjuAGBzRL9VDHKK0Vmw/7c1OzEHE4mBSOKj0+0zLB0cy6FI1jVMFGjEzMJm+jzBIGQ==", "adoption"=>{"adopter_id"=>"2", "pet_id"=>"2"}, "commit"=>"Adopt Me!"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mAdoption Create (13.1ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 2], ["pet_id", 2], ["created_at", "2019-10-24 15:51:52.506191"], ["updated_at", "2019-10-24 15:51:52.506191"]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mShelter Load (3.0ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mPet Update (10.3ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", true], ["updated_at", "2019-10-24 15:51:52.547695"], ["id", 2]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/adoptions/7
+Completed 302 Found in 81ms (ActiveRecord: 41.5ms | Allocations: 17149)
+
+
+Started GET "/adoptions/7" for ::1 at 2019-10-24 11:51:52 -0400
+Processing by AdoptionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdoption Load (0.3ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:4:in `show'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:5:in `show'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:7:in `show'
+  Rendering adoptions/show.html.erb within layouts/application
+  Rendered adoptions/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 473)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 1.0ms | Allocations: 12021)
+
+
+Started GET "/pets" for ::1 at 2019-10-24 11:51:56 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (2.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:22
+  Rendered pets/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 4615)
+Completed 200 OK in 29ms (Views: 21.6ms | ActiveRecord: 4.4ms | Allocations: 13828)
+
+
+Started GET "/pets/10" for ::1 at 2019-10-24 11:51:58 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 10], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 10]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 20.2ms | Allocations: 6020)
+Completed 200 OK in 37ms (Views: 24.2ms | ActiveRecord: 9.0ms | Allocations: 15620)
+
+
