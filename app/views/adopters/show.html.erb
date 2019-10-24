@@ -36,10 +36,13 @@
 <% if @adopter.favorite_pets.length > 0 %>
     <% @adopter.favorite_pets.each do |pet| %>
         <div class="flex-item-<%= pet.id %>">
+
         <%= content_tag :h2, pet.name.titleize %>
         <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
         <%= link_to "See More About Me!", pet_path(pet) %>
+        <%= button_to "remove from favorites",method: :delete %>
         </div>
+        
     <% end %>
 <% else %>
 <p>You haven't added any pets to your favorites yet!</p>
@@ -61,3 +64,6 @@
 <%= link_to "See All Pets", pets_path %>
 <% end %>
 </div>
+
+
+
