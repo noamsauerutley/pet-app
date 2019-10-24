@@ -12,10 +12,12 @@ class SessionsController < ApplicationController
         session[:adopter_id] = @current_user.id
         redirect_to pets_path
       else
-        flash[:errors] = ["You must be logged in to match with pets."]
-        render "sessions#index"
+        flash[:errors] = ["🙁"]
+        render :new
       end
     end
+
+    
   
     def destroy
       session.delete(:adopter_id)

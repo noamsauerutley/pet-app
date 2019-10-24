@@ -26,12 +26,15 @@
     <%= f.submit "Adopt Me!"%>
     <% end%>
     <br>
+      <% if !@current_user.favorite_pets.include?(@pet)  %>
     <%= form_for Favorite.new do |f| %>
         <%= f.hidden_field :adopter_id,:value => @current_user.id %>
         <%= f.hidden_field :pet_id, :value=> @pet.id %>
         <%= f.submit "Favorite"%>
-        <% end%>
-        <br><br>
+    <% end%>
+    <br><br>
+    <% end %>
+
         <h3>Favorited by:</h3>
 <div class="pet-favoriters-flex-container">
 <% if @pet.favoriters.length > 0 %>

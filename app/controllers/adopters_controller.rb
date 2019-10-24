@@ -3,7 +3,7 @@ class AdoptersController < ApplicationController
  skip_before_action :authorized, only: [:new, :create]
 
  def show
-    
+    @adopter = Adopter.find(params[:id])
   end
 
   def new
@@ -45,6 +45,8 @@ class AdoptersController < ApplicationController
   #   end
 
   # end
+
+
 
 
   def adopter_params
