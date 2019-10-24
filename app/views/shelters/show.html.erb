@@ -1,0 +1,8 @@
+<% if @current_user == @shelter.name%>
+  <h1>Welcome<%=" #{@shelter.name}" %></h1><br><br>
+<% else %>
+ <h1><%= "#{@shelter.name} shelter" %></h1>
+
+  <h1><%= "#{@shelter.description}" %></h1>
+<% end %>
+
