@@ -8,23 +8,92 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
-    body {background-color: #A1D0DC;}
-    body {font-family: verdana;}
-    body {font-variant: small-caps}
-    body {color: white;}
-    a {color: white;}
-    button {
-      padding: 10px;
+
+        .header {
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 30px;
     }
-    button:hover {
-      
+    body {
+      background-color: #A1D0DC;
+      font-family: verdana;
+      font-variant: small-caps;
+      color: white;
     }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+     color: #FEE377;
+    }
+   
+    input {
+      padding: 12px 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    textarea {
+      padding: 12px 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      width: 100%;
+      border-radius: 12px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+    }
+
+    img {
+      border-radius: 12px;
+    }
+
+
+    input[type=button], input[type=submit], input [type="file" i]{
+  background-color: #FEE377;
+  border: 1px solid white;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+button {
+  background-color: #FEE377;
+  border: 1px solid white;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+button:hover {
+  
+}
+
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
     </style>
   </head>
 
   <body>
   <header class="menu">
-  <div class="container">
+  <div class="header">
     <nav>
     </nav>
     <nav class="right">
@@ -33,7 +102,7 @@
         <h3>I'm sorry, you must be logged in to use PetMatch</h3>
         <% else %>
           Welcome, <%= @current_user.name %>!
-          <%= link_to "My Page", adopter_path(@current_user), class: "item" %>
+          <%= link_to "My Page".html_safe, adopter_path(@current_user), class: "item" %>
           <%= link_to "See All Pets", pets_path, class: "item" %>
           <%= link_to "Logout", "/logout", method: :delete, class: "item" %>
         <% end %>

@@ -12,7 +12,7 @@
 <h1>meet: <%= "#{@pet.name}" %></h1><br>
 
 <div class="profile_pic">
-    <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 300 %><br>
+    <%= image_tag @pet.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %><br>
     <%= content_tag :h2, @pet.name.titleize %>
 </div>
 <br>

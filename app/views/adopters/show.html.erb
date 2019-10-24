@@ -17,12 +17,12 @@
 }
 </style>
 </head>
-
+<br><br><br>
 <div class="profile_pic">
-    <%= image_tag @current_user.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", width: 300 %>
+    <%= image_tag @current_user.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
 
     <%= content_tag :h2, @current_user.name.titleize %>
-   <%= link_to 'edit profile', edit_adopter_path %>
+   <%= link_to '<button>Edit Profile</button>'.html_safe, edit_adopter_path %>
 </div>
 <br><br><br>
 <h2>About Me:</h2>
@@ -34,7 +34,7 @@
     <% @current_user.favorite_pets.each do |pet| %>
         <div class="flex-item-<%= pet.id %>">
         <%= content_tag :h2, pet.name.titleize %>
-        <%= image_tag pet.image_url, width: 150, class: "img-responsive" %><br>
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
         <%= link_to "See More About Me!", pet_path(pet) %>
         </div>
     <% end %>
@@ -50,7 +50,7 @@
     <% @current_user.adopted_pets.each do |pet| %>
         <div class="flex-item-<%= pet.id %>">
         <%= content_tag :h2, pet.name.titleize %>
-        <%= image_tag pet.image_url, width: 150, class: "img-responsive" %><br>
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
         </div>
     <% end %>
 <% else %>
