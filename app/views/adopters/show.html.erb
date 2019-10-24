@@ -34,14 +34,15 @@
 <h3>My Favorite Pets</h3>
 <div class="favorite_pets_flex_container">
 <% if @adopter.favorite_pets.length > 0 %>
-    <% @adopter.favorite_pets.each do |pet| %>
+    <% @adopter.favorite_pets.uniq.each do |pet| %>
         
         <%= link_to pet_path(pet) do %>
 
         <div class="flex-item-<%= pet.id %>">
 
-        <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
         <% end %>
+    
         <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
        
         </div>
@@ -57,10 +58,14 @@
 <div class="adopted_pets_flex_container">
 <% if @adopter.adopted_pets.length > 0 %>
     <% @adopter.adopted_pets.each do |pet| %>
+
+     <%= link_to pet_path(pet) do %>
+  
         <div class="flex-item-<%= pet.id %>">
         <%= content_tag :h2, pet.name.titleize %>
         <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
         </div>
+        <% end %>
     <% end %>
 <% else %>
 <p>You haven't added any pets to your favorites yet!</p>
