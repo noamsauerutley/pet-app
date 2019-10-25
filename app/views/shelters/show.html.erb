@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <head>
 <title>PetMatch</title>
 <style>
@@ -19,6 +20,20 @@
 </div>
 
 
+=======
+<% if @current_user == @shelter.name%>
+  <h1>Welcome<%=" #{@shelter.name}" %></h1><br><br>
+   <h1><%= "#{@shelter.name} shelter" %></h1>
+
+  <h1><%= "#{@shelter.description}" %></h1>
+   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
+<% else %>
+ <h1><%= "#{@shelter.name} shelter" %></h1>
+
+  <h1><%= "#{@shelter.description}" %></h1>
+   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
+<% end %>
+>>>>>>> a3eefeb574d5f63822ddb929729e0f7ec68ff454
 
 <h2>About Us:</h2>
 <p><%= @shelter.description %></p>

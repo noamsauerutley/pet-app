@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   resources :adoptions, only: [:new,:create,:show]
   resources :favorites, only: [:new,:create]
   resources :pets, only: [:new,:create,:index,:show]
-  resources :shelters, only: [:index,:new,:create,:show,:delete]
+  # resources :shelters, only: [:index,:new,:edit,:update,:create,:show,:delete]
   resources :adopters 
+  resources :shelters
 
   root 'sessions#index'
 
