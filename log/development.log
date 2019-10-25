@@ -36671,3 +36671,491 @@ Processing by SheltersController#show as HTML
 Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 2.0ms | Allocations: 12223)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
+Started GET "/shelters/1" for ::1 at 2019-10-25 11:04:33 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:30:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/views/shelters/show.html.erb:29
+  Rendered shelters/show.html.erb within layouts/application (Duration: 58.1ms | Allocations: 14290)
+Completed 200 OK in 1331ms (Views: 1262.8ms | ActiveRecord: 19.3ms | Allocations: 1390428)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-25 11:04:36 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (2.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:58
+  Rendered adopters/show.html.erb within layouts/application (Duration: 32.7ms | Allocations: 10521)
+Completed 200 OK in 55ms (Views: 37.9ms | ActiveRecord: 10.9ms | Allocations: 21333)
+
+
+Started GET "/adopters/1/edit" for ::1 at 2019-10-25 11:04:48 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1519)
+Completed 200 OK in 36ms (Views: 26.9ms | ActiveRecord: 2.6ms | Allocations: 11362)
+
+
+Started PATCH "/adopters/1" for ::1 at 2019-10-25 11:04:55 -0400
+Processing by AdoptersController#update as HTML
+  Parameters: {"authenticity_token"=>"7fP/0WtgKp9TMuGe1A4+ciXEHQa9xGgti8CUiaOuI1bSt+Bw9nMjVUCeukIiXMa1LidcLrPMaHYIpnnzdFO+ow==", "adopter"=>{"name"=>"Vin Diesel", "description"=>"Just looking for a little buddy.", "zip"=>"11201", "password"=>"[FILTERED]"}, "commit"=>"submit changes", "id"=>"1"}
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adopters_controller.rb:31:in `update'
+  [1m[36mAdopter Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "adopters" WHERE "adopters"."name" = $1 AND "adopters"."id" != $2 LIMIT $3[0m  [["name", "Vin Diesel"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:31:in `update'
+  [1m[36mAdopter Update (0.9ms)[0m  [1m[33mUPDATE "adopters" SET "description" = $1, "updated_at" = $2 WHERE "adopters"."id" = $3[0m  [["description", "Just looking for a little buddy."], ["updated_at", "2019-10-25 15:04:55.327418"], ["id", 1]]
+  ↳ app/controllers/adopters_controller.rb:31:in `update'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adopters_controller.rb:31:in `update'
+Redirected to http://localhost:3000/adopters/1
+Completed 302 Found in 27ms (ActiveRecord: 7.8ms | Allocations: 5856)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-25 11:04:55 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:58
+  Rendered adopters/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3603)
+Completed 200 OK in 28ms (Views: 17.4ms | ActiveRecord: 3.1ms | Allocations: 13729)
+
+
+Started GET "/adopters/1/edit" for ::1 at 2019-10-25 11:05:01 -0400
+Processing by AdoptersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  Rendering adopters/edit.html.erb within layouts/application
+  Rendered adopters/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 616)
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 3.3ms | Allocations: 10305)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-25 11:05:23 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 18.9ms | Allocations: 7587)
+Completed 200 OK in 37ms (Views: 27.6ms | ActiveRecord: 5.5ms | Allocations: 17853)
+
+
+Started GET "/pets/4" for ::1 at 2019-10-25 11:05:26 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (2.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (2.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (2.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 4]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 2726)
+Completed 200 OK in 61ms (Views: 45.9ms | ActiveRecord: 9.3ms | Allocations: 12402)
+
+
+Started GET "/pets/3" for ::1 at 2019-10-25 11:05:31 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdopter Load (1.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "adoptions" ON "adopters"."id" = "adoptions"."adopter_id" WHERE "adoptions"."pet_id" = $1 LIMIT $2[0m  [["pet_id", 3], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:55
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:55
+  Rendered pets/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2791)
+Completed 200 OK in 38ms (Views: 28.1ms | ActiveRecord: 4.6ms | Allocations: 12396)
+
+
+Started GET "/pets/2" for ::1 at 2019-10-25 11:05:42 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (4.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (4.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 2]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 19.9ms | Allocations: 2723)
+Completed 200 OK in 51ms (Views: 32.1ms | ActiveRecord: 14.0ms | Allocations: 12394)
+
+
+Started GET "/pets/4" for ::1 at 2019-10-25 11:05:46 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (1.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 4], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (4.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 4]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2726)
+Completed 200 OK in 41ms (Views: 26.3ms | ActiveRecord: 9.3ms | Allocations: 12415)
+
+
+Started GET "/pets/9" for ::1 at 2019-10-25 11:05:49 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAdopter Load (1.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (2.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 9], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (1.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 9]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 13.9ms | Allocations: 3090)
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 6.7ms | Allocations: 12760)
+
+
+Started GET "/adopters/4" for ::1 at 2019-10-25 11:05:52 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 4]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 4]]
+  ↳ app/views/adopters/show.html.erb:58
+  Rendered adopters/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2708)
+Completed 200 OK in 35ms (Views: 22.2ms | ActiveRecord: 4.6ms | Allocations: 12834)
+
+
+Started GET "/pets/11" for ::1 at 2019-10-25 11:06:03 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAdopter Load (1.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (2.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 11], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (1.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 11]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 26.0ms | Allocations: 6089)
+Completed 200 OK in 49ms (Views: 32.3ms | ActiveRecord: 12.1ms | Allocations: 15752)
+
+
+Started GET "/pets/9" for ::1 at 2019-10-25 11:06:06 -0400
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mAdopter Load (1.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (2.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:12:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 1], ["id", 9], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (2.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 9]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3090)
+Completed 200 OK in 45ms (Views: 31.6ms | ActiveRecord: 8.8ms | Allocations: 12760)
+
+
+Started POST "/adoptions" for ::1 at 2019-10-25 11:06:12 -0400
+Processing by AdoptionsController#create as HTML
+  Parameters: {"authenticity_token"=>"PNyyCDyhSz6qvMUdX+q9WC/JgfO/wPnvSweN8AP1zz8o5pGaLQUmv55d4yFAk2sUW8VQrOzot3LdySRoh3KDkA==", "adoption"=>{"adopter_id"=>"1", "pet_id"=>"9"}, "commit"=>"Adopt Me!"}
+  [1m[36mAdopter Load (0.9ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mAdoption Create (2.5ms)[0m  [1m[32mINSERT INTO "adoptions" ("adopter_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["adopter_id", 1], ["pet_id", 9], ["created_at", "2019-10-25 15:06:12.834769"], ["updated_at", "2019-10-25 15:06:12.834769"]]
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:15:in `create'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:16:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[36mPet Update (0.5ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", true], ["updated_at", "2019-10-25 15:06:12.849559"], ["id", 9]]
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/adoptions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/adoptions/4
+Completed 302 Found in 31ms (ActiveRecord: 10.0ms | Allocations: 9638)
+
+
+Started GET "/adoptions/4" for ::1 at 2019-10-25 11:06:12 -0400
+Processing by AdoptionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdoption Load (0.3ms)[0m  [1m[34mSELECT "adoptions".* FROM "adoptions" WHERE "adoptions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:4:in `show'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:5:in `show'
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/adoptions_controller.rb:7:in `show'
+  Rendering adoptions/show.html.erb within layouts/application
+  Rendered adoptions/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 429)
+Completed 200 OK in 24ms (Views: 16.3ms | ActiveRecord: 1.2ms | Allocations: 12045)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-25 11:06:49 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (3.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (2.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:58
+  Rendered adopters/show.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3878)
+Completed 200 OK in 43ms (Views: 25.8ms | ActiveRecord: 9.3ms | Allocations: 14007)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-25 11:07:53 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:57
+  Rendered adopters/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 4392)
+Completed 200 OK in 42ms (Views: 32.1ms | ActiveRecord: 4.2ms | Allocations: 15750)
+
+
+Started GET "/local-shelters" for ::1 at 2019-10-25 11:08:07 -0400
+Processing by SheltersController#local as HTML
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering shelters/local.html.erb within layouts/application
+  [1m[36mShelter Load (1.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  Rendered shelters/local.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2867)
+Completed 200 OK in 38ms (Views: 29.7ms | ActiveRecord: 2.6ms | Allocations: 12588)
+
+
+Started GET "/shelters/1" for ::1 at 2019-10-25 11:08:08 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (2.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (4.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:30:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mPet Load (2.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/views/shelters/show.html.erb:29
+  Rendered shelters/show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1911)
+Completed 200 OK in 45ms (Views: 30.1ms | ActiveRecord: 9.0ms | Allocations: 11721)
+
+
+Started GET "/shelters/1" for ::1 at 2019-10-25 11:09:03 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:30:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/views/shelters/show.html.erb:29
+  Rendered shelters/show.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1879)
+Completed 200 OK in 32ms (Views: 24.8ms | ActiveRecord: 1.7ms | Allocations: 12776)
+
+
+Started GET "/local" for ::1 at 2019-10-25 11:09:09 -0400
+Processing by PetsController#local as HTML
+  [1m[36mAdopter Load (1.2ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/local.html.erb within layouts/application
+  [1m[36mShelter Load (1.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (2.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 3]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 4]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 5]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 6]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  Rendered pets/local.html.erb within layouts/application (Duration: 33.2ms | Allocations: 9030)
+Completed 200 OK in 54ms (Views: 39.7ms | ActiveRecord: 8.9ms | Allocations: 18750)
+
+
+Started GET "/pets" for ::1 at 2019-10-25 11:09:31 -0400
+Processing by PetsController#index as HTML
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  ↳ app/views/pets/index.html.erb:22
+  Rendered pets/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 4404)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 3.3ms | Allocations: 14770)
+
+
+Started GET "/local" for ::1 at 2019-10-25 11:09:51 -0400
+Processing by PetsController#local as HTML
+  [1m[36mAdopter Load (4.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering pets/local.html.erb within layouts/application
+  [1m[36mShelter Load (2.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  [1m[36mPet Load (1.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (2.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (2.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 3]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (3.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 4]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 5]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 6]]
+  ↳ app/models/adopter.rb:22:in `block in local_pets'
+  Rendered pets/local.html.erb within layouts/application (Duration: 49.3ms | Allocations: 8835)
+Completed 200 OK in 73ms (Views: 49.9ms | ActiveRecord: 19.6ms | Allocations: 19197)
+
+
+Started GET "/adopters/1" for ::1 at 2019-10-25 11:09:56 -0400
+Processing by AdoptersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (0.6ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mAdopter Load (2.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:57:in `set_adopter'
+  [1m[36mCACHE Adopter Load (0.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/adopters_controller.rb:6:in `show'
+  Rendering adopters/show.html.erb within layouts/application
+  [1m[36mPet Load (1.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:36
+  [1m[36mPet Load (1.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "adoptions" ON "pets"."id" = "adoptions"."pet_id" WHERE "adoptions"."adopter_id" = $1[0m  [["adopter_id", 1]]
+  ↳ app/views/adopters/show.html.erb:57
+  Rendered adopters/show.html.erb within layouts/application (Duration: 18.6ms | Allocations: 4386)
+Completed 200 OK in 45ms (Views: 32.9ms | ActiveRecord: 6.3ms | Allocations: 15084)
+
+
+Started GET "/local-shelters" for ::1 at 2019-10-25 11:10:04 -0400
+Processing by SheltersController#local as HTML
+  [1m[36mAdopter Load (1.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering shelters/local.html.erb within layouts/application
+  [1m[36mShelter Load (4.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/models/adopter.rb:13:in `local_shelters'
+  Rendered shelters/local.html.erb within layouts/application (Duration: 14.2ms | Allocations: 2853)
+Completed 200 OK in 64ms (Views: 52.6ms | ActiveRecord: 5.8ms | Allocations: 12567)
+
+
+Started GET "/shelters" for ::1 at 2019-10-25 11:10:06 -0400
+Processing by SheltersController#index as HTML
+  [1m[36mAdopter Load (1.1ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.9ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  ↳ app/views/shelters/index.html.erb:22
+  Rendered shelters/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3432)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 2.0ms | Allocations: 12712)
+
+
+Started GET "/shelters/1" for ::1 at 2019-10-25 11:10:07 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdopter Load (2.7ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (2.8ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:30:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  ↳ app/views/shelters/show.html.erb:29
+  Rendered shelters/show.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1880)
+Completed 200 OK in 49ms (Views: 36.9ms | ActiveRecord: 6.3ms | Allocations: 11693)
+
+

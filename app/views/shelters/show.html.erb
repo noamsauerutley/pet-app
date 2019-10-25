@@ -34,10 +34,9 @@
         <div class="flex-item-<%= pet.id %>">
 
         <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <%= content_tag :h2, pet.name.titleize %>
         <% end %>
-    
-        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
-       
+           
         </div>
         
     <% end %>
