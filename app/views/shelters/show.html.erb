@@ -1,8 +1,49 @@
-<% if @current_user == @shelter.name%>
-  <h1>Welcome<%=" #{@shelter.name}" %></h1><br><br>
+<head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg", height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+
+
+<h2>About Us:</h2>
+<p><%= @shelter.description %></p>
+<br><br><br>
+<h3>💛 Our Pets 💛</h3>
+
+<div class="shelter_pets_flex_container">
+<% if @shelter.pets.length > 0 %>
+    <% @shelter.pets.uniq.each do |pet| %>
+        
+        <%= link_to pet_path(pet) do %>
+
+        <div class="flex-item-<%= pet.id %>">
+
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <% end %>
+    
+        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+       
+        </div>
+        
+    <% end %>
 <% else %>
- <h1><%= "#{@shelter.name} shelter" %></h1>
-
-  <h1><%= "#{@shelter.description}" %></h1>
+<p>We don't have any pets right now</p>
+<%= link_to "See Other Pets", pets_path %>
 <% end %>
-
+</div>
+<br><br>

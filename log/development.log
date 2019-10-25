@@ -31126,3 +31126,928 @@ Processing by SheltersController#show as HTML
 Completed 200 OK in 62ms (Views: 24.7ms | ActiveRecord: 27.7ms | Allocations: 9854)
 
 
+DEPRECATION WARNING: Initialization autoloaded the constants ActionText::ContentHelper and ActionText::TagHelper.
+
+Being able to do this is deprecated. Autoloading during initialization is going
+to be an error condition in future versions of Rails.
+
+Reloading does not reboot the application, and therefore code executed during
+initialization does not run again. So, if you reload ActionText::ContentHelper, for example,
+the expected changes won't be reflected in that stale Module object.
+
+These autoloaded constants have been unloaded.
+
+Please, check the "Autoloading and Reloading Constants" guide for solutions.
+ (called from <main> at /Users/gnome/Development/code/mod-2/project/config/environment.rb:5)
+Started GET "/pets/4" for ::1 at 2019-10-24 20:41:27 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/pets_controller.rb:8:in `show'
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "pets" INNER JOIN "favorites" ON "pets"."id" = "favorites"."pet_id" WHERE "favorites"."adopter_id" = $1 AND "pets"."id" = $2 LIMIT $3[0m  [["adopter_id", 2], ["id", 4], ["LIMIT", 1]]
+  ↳ app/views/pets/show.html.erb:29
+  [1m[36mAdopter Load (0.8ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" INNER JOIN "favorites" ON "adopters"."id" = "favorites"."adopter_id" WHERE "favorites"."pet_id" = $1[0m  [["pet_id", 4]]
+  ↳ app/views/pets/show.html.erb:39
+  Rendered pets/show.html.erb within layouts/application (Duration: 54.5ms | Allocations: 19297)
+Completed 200 OK in 1485ms (Views: 1402.1ms | ActiveRecord: 30.4ms | Allocations: 1397482)
+
+
+Started GET "/shelters/11" for ::1 at 2019-10-24 20:41:36 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAdopter Load (1.0ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 4736)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 10.6ms | Allocations: 12519)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Shelter:0x00007ff57ae95530>):
+    13: </head>
+    14: <br><br><br>
+    15: <div class="profile_pic">
+    16:     <%= image_tag @shelter.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
+    17: 
+    18:     <%= content_tag :h2, @shelter.name.titleize %>
+    19: </div>
+  
+app/views/shelters/show.html.erb:16
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:42:12 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (1.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 39.7ms | Allocations: 3830)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.1ms | Allocations: 5390)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Shelter:0x00007ff57d248ea0>):
+    13: </head>
+    14: <br><br><br>
+    15: <div class="profile_pic">
+    16:     <%= image_tag @shelter.image_url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
+    17: 
+    18:     <%= content_tag :h2, @shelter.name.titleize %>
+    19: </div>
+  
+app/views/shelters/show.html.erb:16
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:45:34 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1360)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.8ms | Allocations: 3639)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+<h2>About Me:</h2>
+<p><%= @adopter.description %></p>
+<br><br><br>
+<h3>My Favorite Pets</h3>
+<div class="favorite_pets_flex_container">
+<% if @adopter.favorite_pets.length > 0 %>
+    <% @adopter.favorite_pets.uniq.each do |pet| %>
+        
+        <%= link_to pet_path(pet) do %>
+
+        <div class="flex-item-<%= pet.id %>">
+
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <% end %>
+    
+        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+       
+        </div>
+        
+    <% end %>
+<% else %>
+<p>You haven't added any pets to your favorites yet!</p>
+<%= link_to "See All Pets", pets_path %>
+<% end %>
+</div>
+<br><br>
+<h3>My Adopted Pets</h3>
+<div class="adopted_pets_flex_container">
+<% if @adopter.adopted_pets.length > 0 %>
+    <% @adopter.adopted_pets.each do |pet| %>
+
+     <%= link_to pet_path(pet) do %>
+  
+        <div class="flex-item-<%= pet.id %>">
+        <%= content_tag :h2, pet.name.titleize %>
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
+        </div>
+        <% end %>
+    <% end %>
+<% else %>
+<p>You haven't added any pets to your favorites yet!</p>
+<%= link_to "See All Pets", pets_path %>
+<% end %>
+</div>
+
+
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .shelter_pets_flex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+20:    
+21:    <h2>About Me:</h2>
+22:    <p><%= @adopter.description %></p>
+23:    <br><br><br>
+24:    <h3>My Favorite Pets</h3>
+25:    <div class="favorite_pets_flex_container">
+26:    <% if @adopter.favorite_pets.length > 0 %>
+27:        <% @adopter.favorite_pets.uniq.each do |pet| %>
+28:            
+29:            <%= link_to pet_path(pet) do %>
+30:    
+31:            <div class="flex-item-<%= pet.id %>">
+32:    
+33:            <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+34:            <% end %>
+35:        
+36:            <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+37:           
+38:            </div>
+39:            
+40:        <% end %>
+41:    <% else %>
+42:    <p>You haven't added any pets to your favorites yet!</p>
+43:    <%= link_to "See All Pets", pets_path %>
+44:    <% end %>
+45:    </div>
+46:    <br><br>
+47:    <h3>My Adopted Pets</h3>
+48:    <div class="adopted_pets_flex_container">
+49:    <% if @adopter.adopted_pets.length > 0 %>
+50:        <% @adopter.adopted_pets.each do |pet| %>
+51:    
+52:         <%= link_to pet_path(pet) do %>
+53:      
+54:            <div class="flex-item-<%= pet.id %>">
+55:            <%= content_tag :h2, pet.name.titleize %>
+56:            <%= image_tag pet.image_url, height: 150, class: "img-responsive" %><br>
+57:            </div>
+58:            <% end %>
+59:        <% end %>
+60:    <% else %>
+61:    <p>You haven't added any pets to your favorites yet!</p>
+62:    <%= link_to "See All Pets", pets_path %>
+63:    <% end %>
+64:    </div>
+  
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:54: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:56: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:62: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:70: unterminated string meets end of file
+app/views/shelters/show.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:49:53 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1205)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms | Allocations: 3476)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+<h2>About Me:</h2>
+<p><%= @shelter.description %></p>
+<br><br><br>
+<h3>💛 Our Pets 💛</h3>
+<div class="shelter_pets_flex_container">
+<% if @shelter.pets.length > 0 %>
+    <% @shelter.pets.uniq.each do |pet| %>
+        
+        <%= link_to pet_path(pet) do %>
+
+        <div class="flex-item-<%= pet.id %>">
+
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <% end %>
+    
+        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+       
+        </div>
+        
+    <% end %>
+<% else %>
+<p>We don't have any pets right now</p>
+<%= link_to "See Other Pets", pets_path %>
+<% end %>
+</div>
+<br><br>
+
+
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .shelter_pets_flex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+20:    
+21:    <h2>About Me:</h2>
+22:    <p><%= @shelter.description %></p>
+23:    <br><br><br>
+24:    <h3>💛 Our Pets 💛</h3>
+25:    <div class="shelter_pets_flex_container">
+26:    <% if @shelter.pets.length > 0 %>
+27:        <% @shelter.pets.uniq.each do |pet| %>
+28:            
+29:            <%= link_to pet_path(pet) do %>
+30:    
+31:            <div class="flex-item-<%= pet.id %>">
+32:    
+33:            <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+34:            <% end %>
+35:        
+36:            <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+37:           
+38:            </div>
+39:            
+40:        <% end %>
+41:    <% else %>
+42:    <p>We don't have any pets right now</p>
+43:    <%= link_to "See Other Pets", pets_path %>
+44:    <% end %>
+45:    </div>
+46:    <br><br>
+  
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:52:26 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1186)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 2694)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+<h2>About Me:</h2>
+<p><%= @shelter.description %></p>
+<br><br><br>
+<h3>💛 Our Pets 💛</h3>
+<div class="shelter_pets_flex_container">
+<% if @shelter.pets.length > 0 %>
+    <% @shelter.pets.uniq.each do |pet| %>
+        
+        <%= link_to pet_path(pet) do %>
+
+        <div class="flex-item-<%= pet.id %>">
+
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <% end %>
+    
+        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+       
+        </div>
+        
+    <% end %>
+<% else %>
+<p>We don't have any pets right now</p>
+<%= link_to "See Other Pets", pets_path %>
+<% end %>
+</div>
+<br><br>
+
+
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .shelter_pets_flex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+20:    
+21:    <h2>About Me:</h2>
+22:    <p><%= @shelter.description %></p>
+23:    <br><br><br>
+24:    <h3>💛 Our Pets 💛</h3>
+25:    <div class="shelter_pets_flex_container">
+26:    <% if @shelter.pets.length > 0 %>
+27:        <% @shelter.pets.uniq.each do |pet| %>
+28:            
+29:            <%= link_to pet_path(pet) do %>
+30:    
+31:            <div class="flex-item-<%= pet.id %>">
+32:    
+33:            <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+34:            <% end %>
+35:        
+36:            <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+37:           
+38:            </div>
+39:            
+40:        <% end %>
+41:    <% else %>
+42:    <p>We don't have any pets right now</p>
+43:    <%= link_to "See Other Pets", pets_path %>
+44:    <% end %>
+45:    </div>
+46:    <br><br>
+  
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:52:56 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.4ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.7ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1202)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms | Allocations: 3459)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.sflex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+<h2>About Me:</h2>
+<p><%= @shelter.description %></p>
+<br><br><br>
+<h3>💛 Our Pets 💛</h3>
+<div class="flex_container">
+<% if @shelter.pets.length > 0 %>
+    <% @shelter.pets.uniq.each do |pet| %>
+        
+        <%= link_to pet_path(pet) do %>
+
+        <div class="flex-item-<%= pet.id %>">
+
+        <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+        <% end %>
+    
+        <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+       
+        </div>
+        
+    <% end %>
+<% else %>
+<p>We don't have any pets right now</p>
+<%= link_to "See Other Pets", pets_path %>
+<% end %>
+</div>
+<br><br>
+
+
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .sflex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+20:    
+21:    <h2>About Me:</h2>
+22:    <p><%= @shelter.description %></p>
+23:    <br><br><br>
+24:    <h3>💛 Our Pets 💛</h3>
+25:    <div class="flex_container">
+26:    <% if @shelter.pets.length > 0 %>
+27:        <% @shelter.pets.uniq.each do |pet| %>
+28:            
+29:            <%= link_to pet_path(pet) do %>
+30:    
+31:            <div class="flex-item-<%= pet.id %>">
+32:    
+33:            <%= image_tag pet.image_url, height: 150, class: "img-responsive"%><br>
+34:            <% end %>
+35:        
+36:            <h2><%= link_to pet.name.titleize, pet_path(pet) %></h2>
+37:           
+38:            </div>
+39:            
+40:        <% end %>
+41:    <% else %>
+42:    <p>We don't have any pets right now</p>
+43:    <%= link_to "See Other Pets", pets_path %>
+44:    <% end %>
+45:    </div>
+46:    <br><br>
+  
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/shelters/show.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/shelters/show.html.erb:43: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/shelters/show.html.erb:52: unterminated string meets end of file
+app/views/shelters/show.html.erb:52: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:54:13 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1046)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 3303)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+<h2>About Me:</h2>
+<p><%= @shelter.description %></p>
+<br><br><br>
+<h3>💛 Our Pets 💛</h3>
+
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .shelter_pets_flex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+20:    
+21:    <h2>About Me:</h2>
+22:    <p><%= @shelter.description %></p>
+23:    <br><br><br>
+24:    <h3>💛 Our Pets 💛</h3>
+  
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:29: unterminated string meets end of file
+app/views/shelters/show.html.erb:29: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:54:54 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1027)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 3284)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <head>
+<title>PetMatch</title>
+<style>
+.shelter_pets_flex_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+</style>
+</head>
+<br><br><br>
+<div class="profile_pic">
+    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+
+    <%= content_tag :h2, @shelter.name.titleize %>
+</div>
+
+
+):
+1:    <head>
+2:    <title>PetMatch</title>
+3:    <style>
+4:    .shelter_pets_flex_container {
+5:      display: flex;
+6:      flex-direction: row;
+7:      flex-wrap: wrap;
+8:      flex-flow: row wrap;
+9:      justify-content: space-evenly;
+10:    }
+11:    
+12:    </style>
+13:    </head>
+14:    <br><br><br>
+15:    <div class="profile_pic">
+16:        <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg, height: 300 %>
+17:    
+18:        <%= content_tag :h2, @shelter.name.titleize %>
+19:    </div>
+  
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+app/views/shelters/show.html.erb:23: unterminated string meets end of file
+app/views/shelters/show.html.erb:23: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:56:23 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.5ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  Rendered shelters/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 95)
+Completed 200 OK in 27ms (Views: 21.0ms | ActiveRecord: 0.9ms | Allocations: 10920)
+
+
+Started GET "/shelters/4" for ::1 at 2019-10-24 20:56:54 -0400
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdopter Load (0.3ms)[0m  [1m[34mSELECT "adopters".* FROM "adopters" WHERE "adopters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:15:in `set_current_user'
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shelters_controller.rb:18:in `show'
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 4]]
+  ↳ app/views/shelters/show.html.erb:29
+  Rendered shelters/show.html.erb within layouts/application (Duration: 25.2ms | Allocations: 6283)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 1.0ms | Allocations: 16988)
+
+
