@@ -1,8 +1,13 @@
 <% if @current_user == @shelter.name%>
   <h1>Welcome<%=" #{@shelter.name}" %></h1><br><br>
+   <h1><%= "#{@shelter.name} shelter" %></h1>
+
+  <h1><%= "#{@shelter.description}" %></h1>
+   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
 <% else %>
  <h1><%= "#{@shelter.name} shelter" %></h1>
 
   <h1><%= "#{@shelter.description}" %></h1>
+   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
 <% end %>
 

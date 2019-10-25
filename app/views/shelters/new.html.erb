@@ -1,0 +1,13 @@
+<h1>If you'd like to list your shelter in our platform please fill out the form below</h1><br><br>
+
+<%= form_for @shelter do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :zip %>
+<%= f.text_field :zip %>
+<%= f.label :avatar %>
+<%= f.file_field :avatar %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.submit %>
+<% end%>
