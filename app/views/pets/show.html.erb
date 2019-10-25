@@ -25,7 +25,7 @@
     <%= f.hidden_field :pet_id, value: @pet.id %>
     <%= f.submit "Adopt Me!"%>
     <% end%>
-    <br>
+    <br><br>
       <% if !@current_user.favorite_pets.include?(@pet)  %>
     <%= form_for Favorite.new do |f| %>
         <%= f.hidden_field :adopter_id,:value => @current_user.id %>
@@ -48,7 +48,6 @@
     <% end %>
 <% else %>
 <p>No one has favorited <%=@pet.name %> yet! 🙁 </p>
-<%= link_to "See All Pets", pets_path %>
 <% end %>
 </div>
 <% else %>

@@ -1,5 +1,8 @@
 class SheltersController < ApplicationController
+    
+    def local
 
+    end
 
     def index
         @shelters = Shelter.all

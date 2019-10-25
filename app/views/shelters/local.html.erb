@@ -16,10 +16,10 @@
 </style>
 </head>
 
-<h1>All Shelters!</h1>
+<h1>Shelters in your area!</h1>
 
 <div class="flex-container">
-<% Shelter.all.each do |shelter| %>
+<% @current_user.local_shelters.each do |shelter| %>
     <div class="flex-item-<%=shelter.id%>">
     
     <%= link_to shelter_path(shelter) do %>

@@ -57,7 +57,7 @@
 
     input[type=button], input[type=submit], input [type="file" i]{
   background-color: #FEE377;
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   padding: 16px 32px;
   text-decoration: none;
@@ -70,7 +70,7 @@
 
 button {
   background-color: #FEE377;
-  border: 1px solid white;
+  border: 2px solid white;
   color: white;
   padding: 16px 32px;
   text-decoration: none;
@@ -103,9 +103,12 @@ form {
         <% if @current_user == nil %>
         <h3>I'm sorry, you must be logged in to use PetMatch</h3>
         <% else %>
-          Welcome, <%= @current_user.name %>!
-          <%= link_to "My Page".html_safe, adopter_path(@current_user), class: "item" %>
-          <%= link_to "See All Pets", pets_path, class: "item" %>
+          Welcome, <%= @current_user.name %>!<br>
+          <%= link_to "My Page".html_safe, adopter_path(@current_user), class: "item" %> |
+          <%= link_to "Local Shelters", "/local-shelters", class: "item" %> |
+          <%= link_to "All Shelters", shelters_path, class: "item" %> |
+          <%= link_to "Local Pets", "/local", class: "item" %> |
+          <%= link_to "All Pets", pets_path, class: "item" %> |
           <%= link_to "Logout", "/logout", method: :delete, class: "item" %>
         <% end %>
       </span>

@@ -1,5 +1,9 @@
 class PetsController < ApplicationController
 
+    def local
+
+    end
+
     def index
         @pets = Pet.all
     end

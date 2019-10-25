@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <head>
 <title>PetMatch</title>
 <style>
@@ -14,26 +13,12 @@
 </head>
 <br><br><br>
 <div class="profile_pic">
-    <%= image_tag "https://www.northeastanimalshelter.org/wp-content/uploads/2013/10/1-IMG_8364-0011.jpg", height: 300 %>
+    <%= image_tag @shelter.image_url, height: 300 %>
 
     <%= content_tag :h2, @shelter.name.titleize %>
 </div>
 
 
-=======
-<% if @current_user == @shelter.name%>
-  <h1>Welcome<%=" #{@shelter.name}" %></h1><br><br>
-   <h1><%= "#{@shelter.name} shelter" %></h1>
-
-  <h1><%= "#{@shelter.description}" %></h1>
-   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
-<% else %>
- <h1><%= "#{@shelter.name} shelter" %></h1>
-
-  <h1><%= "#{@shelter.description}" %></h1>
-   <%= image_tag @shelter.avatar.url || "https://mobilityoi.org/wp-content/uploads/2015/06/Avatar-No-Photo-generic-300x300.jpg", height: 300 %>
-<% end %>
->>>>>>> a3eefeb574d5f63822ddb929729e0f7ec68ff454
 
 <h2>About Us:</h2>
 <p><%= @shelter.description %></p>
